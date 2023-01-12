@@ -136,3 +136,18 @@ h1 {
     margin-top: 50px;
     color: #6F4E37;
 }
+
+
+.formulaire {
+    width: 450px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+}
+
+.champ_recherche {
+    text-align: center;
+}
