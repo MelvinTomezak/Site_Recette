@@ -4,12 +4,12 @@
 <head>
     <title>Patisseries</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/Acceuil.css" type="text/css" />
+    <link rel="stylesheet" href="../css/Accueil.css" type="text/css" />
 </head>
 <body>
 <div class="menu">
     <a href="contact.php">Contact</a>
-    <a href="Acceuil.php">Acceuil</a>
+    <a href="Accueil.php">Accueil</a>
 </div>
 <h1>Patisseries</h1>
 <div class="container">
