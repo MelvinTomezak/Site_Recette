@@ -17,6 +17,8 @@ final class Constantes
 
     const REPERTOIRE_CONTROLEURS = '/Controleurs/';
 
+    const REPERTOIRE_DATABASE = '/Noyau/Database';
+
 
     public static function repertoireRacine() {
         return realpath(__DIR__ . '/../');
@@ -40,6 +42,10 @@ final class Constantes
 
     public static function repertoireControleurs() {
         return self::repertoireRacine() . self::REPERTOIRE_CONTROLEURS;
+    }
+
+    public static function repertoireDataBase(){
+        return self::repertoireRacine() . self::REPERTOIRE_DATABASE;
     }
 
 
