@@ -79,7 +79,14 @@ h1 {
     margin-top: 50px;
     color: #6F4E37;
 }
-
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 20px;
+    text-align: center;
+}
 .banner {
     width: 100%;
     max-width: 600px;
@@ -142,25 +149,5 @@ h1 {
 }
 
 .champ_recherche {
-    text-align: right;
-}
-
-footer {
-    background-color: black;
     text-align: center;
 }
-
-footer p{
-    color: wheat;
-}
-
-
-.recherche {
-    float: right;
-}
-
-.Connexion
-{
-    float: left;
-}
-
