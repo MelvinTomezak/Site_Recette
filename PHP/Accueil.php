@@ -6,23 +6,17 @@
     <link rel="stylesheet" href="../css/Accueil.css">
 </head>
 <body>
-<h1>Bienvenue à la Patisserie</h1>
-</body>
-</html>
 <div class="container">
-    <div class="banner">
-        <img src="../Image/Bannière_Choc.jpg.jfif" alt="Bakery">
-    </div>
     <div class="menu">
         <a href="produits.php">Produits</a>
         <a href="contact.php">Contact</a>
-    </div>
-
-    <div class="champ_recherche">
-        <h2>Rechercher des produits</h2>
+        <div class="Connexion">
+            <p>Vous n'avez pas encore de compte ? <a href="inscription.php">Inscrivez-vous</a></p>
+            <p>Déja inscrit ? <a href="connexion.php">Cliquez ici</a></p>
+        </div>
         <form action="recherche.php" method="post">
-            <input type="text" name="recherche" placeholder="Entrez votre recherche" required>
-            <input type="submit" name="submit" value="Rechercher">
+            <img src="../Image/imageRecherche.jpg" width="2%" height="2%" >
+            <input type="text" name="recherche">
         </form>
     </div>
     <div class="contenu">
@@ -32,22 +26,7 @@
     </div>
 </div>
 <footer>
-<div class="formulaire">
-
-        <h2>Formulaire d'inscription et connexion</h2>
-
-        <form action="traitement.php" method="post">
-            <label>Adresse e-mail : </label>
-            <input type="text" name="email" placeholder="Entrez votre adresse e-mail" required><br>
-            <label>Mot de passe : </label>
-            <input type="password" name="password" placeholder="Entrez votre mot de passe" required><br>
-            <input type="submit" name="submit" value="Se connecter">
-        </form>
-        <span>Vous n'avez pas encore de compte ? <a href="inscription.php">Inscrivez-vous</a></span><br>
-        <span>Mot de passe oubliÃ© ? <a href="mdp_oublie.php">Cliquez ici</a></span>
-        <p>Company © W3docs. All rights reserved.</p>
-</div>
-    </footer>
-
+    <p>Company © W3docs. All rights reserved.</p>
+</footer>
 </body>
 </html>
