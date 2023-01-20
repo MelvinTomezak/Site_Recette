@@ -1,2 +1,7 @@
 <?php
- echo '<header> <h1>Titre</h1></header>';
+echo '<ul class="navbar">';
+echo '<li><a href="home.php">Accueil</a></li>';
+echo '<li><a href="about.php">A propos</a></li>';
+echo '<li><a href="contact.php">Contact</a></li>';
+echo '</ul>';
+?>

@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -5,8 +6,10 @@
         <title>My sweet MVC</title>
     </head>
     <body>
-        <?php Vue::montrer('standard/navbar'); ?>
-        <?php echo $A_vue['body'] ?>
-        <?php Vue::montrer('standard/footer'); ?>
+        <?php Vue::montrer('standard/entete'); ?>
+
+        <?php Vue::montrer('helloworld/voir'); ?>
+
+        <?php Vue::montrer('standard/pied'); ?>
     </body>
 </html>

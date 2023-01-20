@@ -17,7 +17,7 @@ final class Constantes
 
     const REPERTOIRE_CONTROLEURS = '/Controleurs/';
 
-    const REPERTOIRE_DATABASE = '/Noyau/Database';
+    const REPERTOIRE_DATABASE = '/Noyau/Database/';
 
 
     public static function repertoireRacine() {

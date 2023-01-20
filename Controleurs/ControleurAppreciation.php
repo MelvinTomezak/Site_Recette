@@ -7,7 +7,7 @@ class ControleurAppreciation
     public static function readAll()
     {
         $pageTitle = "Toutes les appreciations";
-        $tab_t = ModelAppreciation::readAll();
+        $tab_t = ModeleAppreciation::readAll();
 
     }
 
@@ -16,7 +16,7 @@ class ControleurAppreciation
         $pageTitle = "...";
         if (isset($_POST['appreciation'])) {
             $id = htmlspecialchars($_POST['appreciation']);
-            $ajoutModelAppreciation = new ModelAppreciation($id);
+            $ajoutModelAppreciation = new ModeleAppreciation($id);
             $ajoutModelAppreciation->create();
 
         } else {
@@ -29,7 +29,7 @@ class ControleurAppreciation
         $pageTitle = "...";
         if (isset($_POST['appreciation'])) {
             $id = htmlspecialchars($_POST['appreciation']);
-            $modifieModelAppreciation = new ModelAppreciation($id);
+            $modifieModelAppreciation = new ModeleAppreciation($id);
             $modifieModelAppreciation->update();
 
         } else {
@@ -42,7 +42,7 @@ class ControleurAppreciation
         $pageTitle = "...";
         if (isset($_POST['appreciation'])) {
             $id = htmlspecialchars($_POST['appreciation']);
-            $supprimeModelAppreciation = new ModelAppreciation($id);
+            $supprimeModelAppreciation = new ModeleAppreciation($id);
             $supprimeModelAppreciation->delete();
 
         } else {

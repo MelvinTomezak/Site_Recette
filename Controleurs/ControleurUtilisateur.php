@@ -7,7 +7,7 @@ class ControleurUtilisateur
     public static function readAll()
     {
         $pageTitle = "Tous les utilisateur";
-        $tab_t = ModelUtilisateur::readAll();
+        $tab_t = ModeleUtilisateur::readAll();
 
     }
 
@@ -16,7 +16,7 @@ class ControleurUtilisateur
         $pageTitle = "...";
         if (isset($_POST['appreciation'])) {
             $id = htmlspecialchars($_POST['utilisateur']);
-            $ajoutModelUtilisateur = new ModelUtilisateur($id);
+            $ajoutModelUtilisateur = new ModeleUtilisateur($id);
             $ajoutModelUtilisateur->create();
 
         } else {
@@ -29,7 +29,7 @@ class ControleurUtilisateur
         $pageTitle = "...";
         if (isset($_POST['utilisateur'])) {
             $id = htmlspecialchars($_POST['utilisateur']);
-            $modifieModelUtilisateur = new ModelUtilisateur($id);
+            $modifieModelUtilisateur = new ModeleUtilisateur($id);
             $modifieModelUtilisateur->update();
 
         } else {
@@ -42,7 +42,7 @@ class ControleurUtilisateur
         $pageTitle = "...";
         if (isset($_POST['utilisateur'])) {
             $id = htmlspecialchars($_POST['utilisateur']);
-            $supprimeModelUtilisateur = new ModelAppreciation($id);
+            $supprimeModelUtilisateur = new ModeleAppreciation($id);
             $supprimeModelUtilisateur->delete();
 
         } else {
