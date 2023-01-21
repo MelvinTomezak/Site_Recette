@@ -1,44 +1,53 @@
 <link rel="stylesheet" type="text/css" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(#e66465, #9198e5);        }
+        .rectangle {
+            width: 300px;
+            height: 300px;
+            background: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+            float: :left;
+            border-radius: 10px;
+            box-shadow: 1px 1px 20px black;
 
-<?php
-$recette = ModeleRecette::laRecette();
-$i = 0;
-$arr[' '] = '';
-// Ajouter la requête à la variable $A_vue
-$A_vue['recette'] = $recette;
-// Supprimer les doublons
-$A_vue['recette'] = array_unique($A_vue['recette']);
-// Récupérer les clés
-$clés = array_keys($A_vue['recette']);
-// Créer un tableau
-echo "<table>";
-// Parcourir le tableau et récupérer les valeurs
-foreach ($A_vue['recette'] as $value) {
-    // Afficher le nom de l'attribut et la valeur dans une ligne de tableau
-    echo "<tr><td>" . $clés[$i] . "</td><td>" . $value . "</td></tr>";
-    $i++;
-}
-echo "</table>";
-?>
+        }
+    </style>
+</head>
+<body >
 
-<style>
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        font-family: 'Roboto', sans-serif;
-        font-size: 14px;
-        color: #333;
+<div style="display: flex">
+    <?php
+    $i = 0;
+    $recette = ModeleRecette::laRecette();
+    $arr[' '] = '';
+    // Ajouter la requête à la variable $A_vue
+    $A_vue['recette'] = $recette;
+    // Supprimer les doublons
+    $A_vue['recette'] = array_unique($A_vue['recette']);
+    $i = 0;
+    foreach ($A_vue['recette'] as $value) {
+        echo "<div class='rectangle'>";
+        echo "<table>";
+        foreach ($A_vue['recette'] as $key => $value) {
+            echo "<tr><td>" . $key . "</td><td>" . $value . "</td></tr>";
+        }
+        echo "</table>";
+        echo "</div>";
+        $i++;
     }
-
-    th, td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-</style>
+    ?>
+</div>
+</body>
+</html>
