@@ -60,7 +60,7 @@ LIMIT 1;';
         return $recette;
     }
     public static function laRecette(){
-$sql = 'SELECT id, note_moyenne, photographie, liste_ingredient, liste_ustensiles, temps_preparation, difficulte, cout, description_textuelle_preparation, type_cuisson, liste_particularite, liste_apprecation
+$sql = 'SELECT  photographie, difficulte, temps_preparation ,note_moyenne
 FROM recette
 WHERE id = :id';
 

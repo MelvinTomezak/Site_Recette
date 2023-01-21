@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+
 <?php
 $recette = ModeleRecette::laRecette();
 $i = 0;
@@ -18,3 +20,25 @@ foreach ($A_vue['recette'] as $value) {
 }
 echo "</table>";
 ?>
+
+<style>
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        color: #333;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+</style>
