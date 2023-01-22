@@ -1,1 +1,0 @@
-<footer>&copy; 2023 Site Recette. Tous droits réservés.</footer>
