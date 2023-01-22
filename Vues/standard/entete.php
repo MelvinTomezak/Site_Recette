@@ -1,8 +1,8 @@
 <nav>
     <ul class="navbar">
-        <li><a href="home.php">Home</a></li>
-        <li><a href="about.php">About</a></li>
-        <li><a href="contact.php">Contact</a></li>
+        <li><a href="Accueil.php">Home</a></li>
+        <li><a href="Contact.php">About</a></li>
+        <li><a href="Contact.php">Contact</a></li>
         <li class="search-bar">
             <form>
                 <input type="search" placeholder="Search...">

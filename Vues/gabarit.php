@@ -7,10 +7,8 @@
         <title>My sweet MVC</title>
     </head>
     <body>
-        <?php Vue::montrer('standard/entete'); ?>
-
-        <?php Vue::montrer('Accueil/Accueil'); ?>
-
-        <?php Vue::montrer('standard/pied'); ?>
+        <?php Vue::montrer('standard/entete');?>
+        <?php Vue::montrer('Accueil/Accueil');?>
+        <?php Vue::montrer('standard/pied');?>
     </body>
 </html>
