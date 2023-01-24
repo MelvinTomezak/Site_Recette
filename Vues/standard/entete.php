@@ -14,8 +14,18 @@
                 <a href="profile.php">Profile</a>
                 <a href="logout.php">Logout</a>
             <?php } else { ?>
-                <a href="login.php">Login</a>
-                <a href="register.php">Register</a>
+
+
+                <div class="log">
+                    <a href="../Connexion/Login.php">Login</a>
+                </div>
+
+                <div class="reg">
+                    <a href="../Connexion/Register.php">Register</a>
+                </div>
+
+
+
             <?php } ?>
         </li>
     </ul>
@@ -58,18 +68,18 @@
         nav ul li a:hover {
             background-color: #2f6cc9;
             color: white;
-            padding: 10px;
-            border-radius: 10px;
+            padding: 1px;
+            border-radius: 5px;
         }
 
         nav ul li.search-bar {
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 50px;
         }
 
         nav form {
             display: flex;
             align-items: center;
+            padding-top: 10px;
         }
 
         nav input[type="search"] {
@@ -87,10 +97,6 @@
             padding: 10px 20px;
             font-weight: bold;
             cursor: pointer;
-        }
-
-        nav ul li.right {
-            margin-left: auto;
         }
 
 

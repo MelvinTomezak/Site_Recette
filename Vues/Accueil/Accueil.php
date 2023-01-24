@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
         body{
-            background: linear-gradient(#e66465, #9198e5);        }
+            background: linear-gradient(#e66465, #9198e5);
+        }
+
         .rectangle {
             width: 300px;
             height: 300px;
