@@ -3,6 +3,7 @@
 
 class ModeleRecette{
 
+
     public  function readAll(){
         $sql = "SELECT * FROM recette";
         $rep = Database::$con->query($sql);
@@ -30,15 +31,13 @@ class ModeleRecette{
         $values = array("id" => $this->id);
         $req_prep->execute($values);
     }
-    public function recetterandom3(){
-        $sql = 'SELECT * FROM recettes 
-ORDER BY RAND() 
-LIMIT 3;';
-        $req_prep = Database::$con->prepare($sql);
-        $values = array("id" => $this->id);
-        $req_prep->execute($values);
-        $response = $req_prep->fetch();
-        return $response;
+    public static function avoir3recettes(){
+
+        $sql = 'SELECT photographie, difficulte, temps_preparation ,note_moyenne FROM recette ORDER BY RAND() LIMIT 3';
+        $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N")->prepare($sql);
+        $req_prep->execute();
+        $recette = $req_prep->fetch();
+        return $recette;
     }
 //    public  function uneRecette(){
 //        $sql = 'SELECT * FROM recettes
@@ -51,26 +50,35 @@ LIMIT 3;';
 //        return $recette;
 //    }
     public static function uneRecette(){
-        $sql = 'SELECT * FROM recette 
+        $sql = 'SELECT  photographie, difficulte, temps_preparation ,note_moyenne FROM recette 
 ORDER BY RANDOM() 
-LIMIT 1;';
+LIMIT 3';
         $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N")->prepare($sql);
         $req_prep->execute();
         $recette = $req_prep->fetch();
         return $recette;
     }
-    public static function laRecette(){
-$sql = 'SELECT  photographie, difficulte, temps_preparation ,note_moyenne
+    public static function laRecette($id_recette){
+        $sql = 'SELECT  photographie, difficulte, temps_preparation ,note_moyenne
 FROM recette
-WHERE id = :id';
+WHERE $id_recette ';
 
-$req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N")->prepare($sql);
-$values = array(":id" => 1);
-$req_prep->execute($values);
-$recette = $req_prep->fetch();
-return $recette;
+        $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N")->prepare($sql);
+        $values = array(":id" => 2);
+        $req_prep->execute($values);
+        $recette = $req_prep->fetch();
+        return $recette;
 
-}
+    }
+    public static function toutesLesRecettes() {
+        $sql = 'SELECT photographie, difficulte, temps_preparation ,note_moyenne FROM recette ORDER BY id ASC LIMIT 3';
+
+        $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N")->prepare($sql);
+        $req_prep->execute();
+        $recettes = $req_prep->fetch();
+
+        return $recettes;
+    }
     public function delete1(){
         $database = new Database();
         $con = $database->getConnection();

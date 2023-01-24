@@ -11,7 +11,7 @@ class ControleurRecette{
 
         }
 
-    //    Vue::montrer("gabarit", Recette::uneRecette());
+        //    Vue::montrer("gabarit", Recette::uneRecette());
 
     }
 
@@ -63,44 +63,33 @@ class ControleurRecette{
         }
     }
     public static function recetterandomAction(){
-        $pageTitle = "...";
-        if(isset($_POST['recette'])){
-            $id = htmlspecialchars($_POST['recette']);
-            $ajouteRecette = new ModeleRecette($id);
-            $ajouteRecette->uneRecette();
+        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+        $recetteModel = new ModeleRecette($db);
+        $recette = $recetteModel->avoir3recettes;
 
-        }
-        
-       // Vue::montrer("gabarit", Recette::uneRecette());
+        Vue::montrer('Acceuil/Acceuil', array('recette' => $recette));
+
     }
 
-    public static function laRecetteAction(){
+
+
+    public static function laRecetteAction()
+    {
         $pageTitle = "...";
-        if(isset($_GET['recette'])){
+        if (isset($_GET['recette'])) {
             $id = htmlspecialchars($_GET['recette']);
-            $ajouteRecette = new ModeleRecette($id);
-            $ajouteRecette->laRecette();
+            $recette = new ModeleRecette($id);
+            $recettes = $recette->uneRecette();
+            //Vue::montrer('Accueil/Accueil', array('recette' =>  $recette));
 
         }
 
-//        Vue::montrer("gabarit", Recette::laRecette());
     }
 
 
-  /*  public function recetteRandomAffichage()
-    {
-        $O_recette =  new Recette();
-        Vue::montrer('helloworld/voir', $O_recette->recetterandom3());
 
-    }
-    public function recetteRandom1affichage()
-    {
-        $O_recette =  new Recette();
-        Vue::montrer('helloworld/voir', $O_recette->uneRecette());
 
-    }*/
 
-    /* Action reservée pour un administrateur */
     public static function something(){
         if(session::is_admin()){
             $pageTitle = "...";
