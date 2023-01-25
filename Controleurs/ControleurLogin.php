@@ -1,41 +1,60 @@
 <?php
+session_start();
 
-
-class ControleurLogin
+final class ControleurLogin
 {
-    private $identifiant;
-    private $mot_de_passe;
-
-    public function __construct($identifiant, $mot_de_passe)
+    public function defautAction()
     {
-        $this->identifiant = $identifiant;
-        $this->mot_de_passe = $mot_de_passe;
+        $_SESSION['error_message'] = "";
+        Vue::montrer('Connexion/Register');
     }
 
-    public function login()
+    public function connexionAction(){
+        $_SESSION['error_message'] = "";
+        Vue::montrer('Connexion/Login');
+    }
+
+    public function deconnexionAction(){
+        $_SESSION['error_message'] = "";
+        $_SESSION["pseudo"] = NULL;
+        $_SESSION["token"] = NULL;
+        header("Location: /");
+    }
+
+    public function inscriptionAction(){
+        $_SESSION['error_message'] = "";
+        Vue::montrer('Connexion/Register');
+    }
+
+    public function inscrireAction()
     {
-        // Vérification des informations de connexion
-        if ($this->identifiant && $this->mot_de_passe) {
-            // Requête de vérification des informations de connexion
-            $sql = "SELECT * FROM utilisateur WHERE identifiant = :identifiant AND mot_de_passe = :mot_de_passe";
-            $stmt = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N")->prepare($sql);
-            $stmt->bindParam(':identifiant', $this->identifiant);
-            $stmt->bindParam(':mot_de_passe', $this->mot_de_passe);
-            $stmt->execute();
-
-            // Vérification du résultat de la requête
-            if ($stmt->rowCount() > 0) {
-                // Stockage des informations de connexion
-                session_start();
-                $_SESSION['identifiant'] = $this->identifiant;
-                $_SESSION['mot_de_passe'] = $this->mot_de_passe;
-
-                // Redirection vers la page d'accueil
-                header("Location: index.php");
-            } else {
-                // Affichage d'un message d'erreur
-                echo "Les informations de connexion sont incorrectes.";
-            }
+        $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+        $model = new Login($req_prep);
+        $model->submitAction($_GET['nom_affichage'], $_GET['identifiant'], $_GET['mot_de_passe'], 0);
+        if($_SESSION['error_message'] != ""){
+            Vue::montrer('Connexion/Register');
+        }else{
+            header("Location: /");
         }
     }
+
+    public function connecterAction(){
+        if($_GET['identifiant'] == NULL || $_GET['mot_de_passe'] == NULL){
+            $_SESSION['error_message'] = "Veuillez remplir tous les champs";
+            Vue::montrer('Connexion/Login');
+            return;
+        }
+        $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+        $model = new Compte($req_prep);
+        $model->getCompteAction($_GET['identifiant'], $_GET['mot_de_passe']);
+        if($_SESSION['token'] == true){
+            $test=1;
+            var_dump($test);
+            header("Location: /");
+        } else {
+            Vue::montrer('Connexion/Login');
+        }
+    }
+
 }
+?>

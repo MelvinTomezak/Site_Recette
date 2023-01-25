@@ -8,7 +8,7 @@ session_start();
 
 <link rel="stylesheet" href="connexion.css">
 
-<form action="register.php" method="POST">
+<form action="Login/inscrire" method="POST">
     <label for="username">Username</label>
     <input type="text" name="username" id="username"/>
 

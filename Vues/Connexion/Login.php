@@ -8,7 +8,7 @@ session_start();
 
 <link rel="stylesheet" href="connexion.css">
 
-<form action="/Controleurs/ControleurLogin.php" method="POST">
+<form action="/Modele/Login/connecter/" method="POST">
 
     <label for="email">Email</label>
     <input type="email" name="email" id="email"/>

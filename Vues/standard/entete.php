@@ -1,7 +1,7 @@
 <nav>
     <ul class="navbar">
-        <li><a href="Accueil.php">Home</a></li>
-        <li><a href="Contact.php">About</a></li>
+        <li><a href="Accueil.php">Accueil</a></li>
+        <li><a href="Contact.php">A propos de nous</a></li>
         <li><a href="Contact.php">Contact</a></li>
         <li class="search-bar">
             <form>
@@ -10,23 +10,8 @@
             </form>
         </li>
         <li class="right">
-            <?php if (isset($_SESSION['user'])) { ?>
-                <a href="profile.php">Profile</a>
-                <a href="logout.php">Logout</a>
-            <?php } else { ?>
-
-
-                <div class="log">
-                    <a href="../Connexion/Login.php">Login</a>
-                </div>
-
-                <div class="reg">
-                    <a href="../Connexion/Register.php">Register</a>
-                </div>
-
-
-
-            <?php } ?>
+            <a href="/Vues/Connexion/Login.php">Login</a>
+            <a href="/Vues/Connexion/Register.php">Register</a>
         </li>
     </ul>
 </nav>
@@ -34,6 +19,7 @@
 
 
 <head>
+    <!--  sdfdfgd -->
     <style>
         nav {
             background: linear-gradient(#e66465, #9198e5);
