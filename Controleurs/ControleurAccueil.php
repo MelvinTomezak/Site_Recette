@@ -1,5 +1,5 @@
 <?php
 
-class ControleurAccueil
+class ControleurAccueil extends Controller
 {
 }
