@@ -1,6 +1,5 @@
 <?php
 
-require '../Controleurs/ControleurDefaut.php';
 class Recette{
 
 
@@ -39,16 +38,6 @@ class Recette{
         $recettes = $req_prep->fetchAll(PDO::FETCH_ASSOC);
         return $recettes;
     }
-//    public  function uneRecette(){
-//        $sql = 'SELECT * FROM recettes
-//ORDER BY RAND()
-//LIMIT 1;';
-//        $req_prep = Database::$con->prepare($sql);
-//        $values = array("id" => $this->id);
-//        $req_prep->execute($values);
-//        $recette = $req_prep->fetch();
-//        return $recette;
-//    }
     public static function uneRecette(){
         $sql = 'SELECT  photographie, difficulte, temps_preparation ,note_moyenne FROM recette 
 ORDER BY RANDOM() 
@@ -58,15 +47,12 @@ LIMIT 3';
         $recette = $req_prep->fetch();
         return $recette;
     }
-    public static function laRecette($id_recette){
-        $sql = 'SELECT  photographie, difficulte, temps_preparation ,note_moyenne
-FROM recette
-WHERE $id_recette ';
-
+    public static function laRecette($id){
+        $sql = "SELECT * FROM recette WHERE $id = $1 ";
         $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N")->prepare($sql);
-        $values = array(":id" => 2);
+        $values = array($id);
         $req_prep->execute($values);
-        $recette = $req_prep->fetch();
+        $recette = $req_prep->fetchAll(PDO::FETCH_OBJ);
         return $recette;
 
     }
@@ -89,7 +75,7 @@ WHERE $id_recette ';
         return $req_prep;
     }
     public function addRecette(){
-       $sql =  'INSERT INTO recette (id, note_moyenne, photographie, liste_ingredient, liste_ustensiles, temps_preparation, difficulte, cout, description_textuelle_preparation, type_cuisson, liste_particularite, liste_apprecation) 
+        $sql =  'INSERT INTO recette (id, note_moyenne, photographie, liste_ingredient, liste_ustensiles, temps_preparation, difficulte, cout, description_textuelle_preparation, type_cuisson, liste_particularite, liste_apprecation) 
 VALUES()';
     }
 
