@@ -30,6 +30,6 @@
     <h2>Contactez-nous</h2>
 
     <p>Nous sommes ouverts à toutes sortes de critiques. Si vous avez des questions ou des commentaires à propos de notre site ou de nos recettes, n'hésitez pas à nous contacter à l'adresse suivante : <a href="mailto:maisondespatisseries@gmail.com">maisondespatisseries@gmail.com</a>.</p>
-<?php
 
-include '../standard/pied.php'; ?>
+
+    <?php include '../standard/pied.php'; ?>
