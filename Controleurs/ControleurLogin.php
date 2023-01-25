@@ -24,49 +24,28 @@ final class ControleurLogin {
 
     public function inscrireAction()
     {
-        $db = new Database();
+        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
         $model = new Login($db);
-        $nom_affichage = $_POST['nom_affichage'];
-        $identifiant = $_POST['identifiant'];
-        $mot_de_passe = $_POST['mot_de_passe'];
-
-        if($nom_affichage == NULL || $identifiant == NULL || $mot_de_passe == NULL){
-            $_SESSION['error_message'] = "Veuillez remplir tous les champs";
-            Vue::montrer('Connexion/Register');
-            return;
-        }
-
-        $result = $model->submitAction($nom_affichage, $identifiant, $mot_de_passe);
-
-        if($result == "exists") {
-            $_SESSION['error_message'] = "L'adresse mail existe déja";
-            Vue::montrer('Connexion/Register');
-            return;
-        } elseif ($result == "success") {
+        $model->submitAction($_GET['username'], $_GET['email'], $_GET['password'], 0);
+        if($_SESSION['error_message'] != ""){
+            Vue::montrer('Connexion/Login');
+        }else{
             header("Location: /");
-        } else {
-            Vue::montrer('Connexion/Register');
         }
     }
 
     public function connecterAction(){
-        $db = new Database();
-        $model = new Login($db);
-        $identifiant = $_POST['identifiant'];
-        $mot_de_passe = $_POST['mot_de_passe'];
-
-        if($identifiant == NULL || $mot_de_passe == NULL){
+        if($_GET['email'] == NULL || $_GET['password'] == NULL){
             $_SESSION['error_message'] = "Veuillez remplir tous les champs";
-            Vue::montrer('Connexion/Login');
+            Vue::montrer('Connexion/Register');
             return;
         }
-
-        $result = $model->connecterAction($identifiant, $mot_de_passe);
-
-        if($result == "success") {
+        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+        $model = new Login($db);
+        $model->connecterAction($_GET['email'], $_GET['password']);
+        if($_SESSION['token'] == true){
             header("Location: /");
         } else {
-            $_SESSION['error_message'] = "Identifiant ou mot de passe incorrect";
             Vue::montrer('Connexion/Login');
         }
     }
