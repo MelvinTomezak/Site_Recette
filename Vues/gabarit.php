@@ -9,7 +9,7 @@
     <body>
         <?php Vue::montrer('standard/entete');?>
 
-        <?php Vue::montrer('Accueil/Accueil');?>
+        <<?php echo $A_vue['body'] ?>
 
         <?php Vue::montrer('standard/pied');?>
 
