@@ -3,8 +3,7 @@ session_start();
 
 final class ControleurLogin
 {
-    public function defautAction()
-    {
+    public function defautAction(){
         $_SESSION['error_message'] = "";
         Vue::montrer('Connexion/Register');
     }
@@ -30,7 +29,7 @@ final class ControleurLogin
     {
         $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
         $model = new Login($req_prep);
-        $model->submitAction($_GET['nom_affichage'], $_GET['identifiant'], $_GET['mot_de_passe'], 0);
+        $model->submitAction($_GET['nom_affichage'], $_GET['identifiant'], $_GET['mot_de_passe']);
         if($_SESSION['error_message'] != ""){
             Vue::montrer('Connexion/Register');
         }else{
@@ -44,12 +43,11 @@ final class ControleurLogin
             Vue::montrer('Connexion/Login');
             return;
         }
+
         $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
-        $model = new Compte($req_prep);
+        $model = new Login($req_prep);
         $model->getCompteAction($_GET['identifiant'], $_GET['mot_de_passe']);
         if($_SESSION['token'] == true){
-            $test=1;
-            var_dump($test);
             header("Location: /");
         } else {
             Vue::montrer('Connexion/Login');
