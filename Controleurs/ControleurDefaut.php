@@ -98,4 +98,22 @@ class ControleurDefaut{
         }
     }
 
+    public function addRecette(){
+        $Note = $_POST['note_moyenne'];
+        $Image = $_POST['photographie'];
+        $Ingedient = $_POST['liste_ingredient'];
+        $Ustensiles = $_POST['liste_ustensiles'];
+        $TempsPreparation = $_POST['temps_preparation'];
+        $Difficulte = $_POST['difficulte'];
+        $Cout = $_POST['cout'];
+        $Description = $_POST['description_textuelle_preparation'];
+        $Cuisson = $_POST['type_cuisson'];
+        $Particularite = $_POST['liste_particularite'];
+        $Appreciation = $_POST['liste_apprecation'];
+        if($Note == NULL  || $Ingedient == NULL || $Ustensiles == NULL || $TempsPreparation == NULL || $Difficulte == NULL|| $Cout == NULL|| $Description == NULL|| $Cuisson == NULL|| $Particularite == NULL|| $Appreciation == NULL){
+            $_SESSION['error_message'] = "Veuillez remplir tous les champs";
+            return '../Vues/EditRecette/ajouterRecette';
+        }
+
+    }
 }

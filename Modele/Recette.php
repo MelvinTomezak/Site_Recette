@@ -1,6 +1,6 @@
 <?php
 
-
+require '../Controleurs/ControleurDefaut.php';
 class Recette{
 
 
@@ -88,6 +88,9 @@ WHERE $id_recette ';
         $req_prep->execute($values);
         return $req_prep;
     }
-
+    public function addRecette(){
+       $sql =  'INSERT INTO recette (id, note_moyenne, photographie, liste_ingredient, liste_ustensiles, temps_preparation, difficulte, cout, description_textuelle_preparation, type_cuisson, liste_particularite, liste_apprecation) 
+VALUES()';
+    }
 
 }
