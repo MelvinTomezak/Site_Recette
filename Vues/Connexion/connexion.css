@@ -1,3 +1,8 @@
+body
+{
+    background: linear-gradient(#e66465, #9198e5); ;
+}
+
 form {
     width: 30%;
     padding: 30px;
@@ -27,4 +32,14 @@ input[type="submit"] {
     margin-top: 15px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.have-account
+{
+    float: right;
+}
+
+.password-forgot
+{
+    float: left;
 }
