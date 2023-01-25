@@ -45,7 +45,7 @@ class Login {
         $result = $stmt->fetchAll();
         if ($result[0]["mot_de_passe"] == $mot_de_passe && $mot_de_passe != "") {
             $_SESSION['token'] = $result[0]['token'];
-            $_SESSION['nom_affichage']            = $result[0]['nom_affichage'];
+            $_SESSION['nom_affichage'] = $result[0]['nom_affichage'];
             $_SESSION['error_message'] = "";
             $stmt2 = $this->req_prep->prepare("UPDATE Login SET date_derniere_connexion = ?  WHERE identifiant=?");
             $stmt2->execute(array(date("Y-m-d H:i:s"),$identifiant));

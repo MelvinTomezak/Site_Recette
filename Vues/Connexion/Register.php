@@ -1,6 +1,8 @@
 <?php
 session_start();
 ?>
+
+
 <?php include '../standard/entete.php'; ?>
 
 <!doctype html>
@@ -8,7 +10,8 @@ session_start();
 
 <link rel="stylesheet" href="connexion.css">
 
-<form action="Login/inscrire/" method="POST">
+<form action="/Compte/inscrire/" method="POST">
+
     <label for="username">Username</label>
     <input type="text" name="username" id="username"/>
 
@@ -21,4 +24,5 @@ session_start();
     <input type="submit" value="Register"/>
 
 </form>
+
 <?php include '../standard/pied.php'; ?>
