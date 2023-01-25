@@ -1,6 +1,6 @@
-# Un site de recette 
+# Un site de pâtisserie
 
-L'équipe présentée à la fin de ce README vous a concocté un site web de recette de cuisine
+L'équipe présentée à la fin de ce README vous a concocté un site web de recette de pâtisserie
 
 ## Effectué grace à la méthode MVC 
 
