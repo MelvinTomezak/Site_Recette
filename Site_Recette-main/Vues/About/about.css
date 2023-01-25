@@ -1,0 +1,23 @@
+body {
+    background-color: #F5F5DC; /* Couleur de fond rappelant la farine */
+}
+
+h1, h2, h3 {
+    color: #8B2500; /* Couleur rappelant le chocolat */
+}
+
+p {
+    color: #8B2500; /* Couleur rappelant le chocolat */
+    font-family: 'Great Vibes', cursive; /* Police d'écriture rappelant les écritures de pâtisserie */
+}
+
+.container {
+    background-color: #FFFACD; /* Couleur de fond rappelant la crème */
+    padding: 20px;
+    border-radius: 25px; /* Donner un aspect arrondi rappelant les gâteaux */
+}
+
+img {
+    border: 3px solid #8B2500; /* Ajout d'une bordure rappelant le chocolat */
+    border-radius: 50%; /* Donner un aspect arrondi rappelant les gâteaux */
+}
