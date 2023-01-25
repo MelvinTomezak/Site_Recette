@@ -27,8 +27,8 @@ session_start();
         </div>
 
         <div class="have-account">
-            <span>Vous avez déjà un compte ?</span>
-            <a href="Register.php">Connectez-vous</a>
+            <span>Vous n'avez pas de  compte ?</span>
+            <a href="Register.php">Inscrivez-vous</a>
         </div>
     </form>
 </div>

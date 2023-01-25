@@ -9,14 +9,14 @@ session_start();
 
 <head>
     <meta charset="utf-8">
-    <title>Page de connexion</title>
+    <title>Page d'inscription</title>
     <link rel="stylesheet" href="connexion.css">
 </head>
 
 <body>
 <div class="form-container">
     <form action="/Modele/Login/connecter/" method="POST">
-        <h1>Connectez-vous</h1>
+        <h1>Inscription</h1>
         <label for="name">Name</label>
         <input type="text" name="name" id="name">
 
@@ -29,7 +29,7 @@ session_start();
         <input type="submit" value="Register">
 
         <div class="have-account">
-            <span>Vous n'avez pas de compte ?</span>
+            <span>Vous avez déja un compte ?</span>
             <a href="Login.php">Connectez-vous</a>
         </div>
     </form>
