@@ -1,8 +1,8 @@
 <nav>
     <ul class="navbar">
-        <li><a href="Accueil.php">Accueil</a></li>
-        <li><a href="Contact.php">A propos de nous</a></li>
-        <li><a href="Contact.php">Contact</a></li>
+        <li><a href="/Vues/Accueil/Accueil">Accueil</a></li>
+        <li><a href="/Vues/Contact/Contact">A propos de nous</a></li>
+        <li><a href="/Vues/Contact/Contact">Contact</a></li>
         <li class="search-bar">
             <form>
                 <input type="search" placeholder="Search...">
@@ -10,8 +10,8 @@
             </form>
         </li>
         <li class="right">
-            <a href="/Vues/Connexion/Login.php">Login</a>
-            <a href="/Vues/Connexion/Register.php">Register</a>
+            <a href="/Vues/Connexion/Login">Login</a>
+            <a href="/Vues/Connexion/Register">Register</a>
         </li>
     </ul>
 </nav>
