@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
+
+<link rel="stylesheet" href="Accueil.css">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
-        body{
-            background: linear-gradient(#e66465, #9198e5);        }
-        .rectangle {
+        .body {
             width: 300px;
             height: 300px;
             background: aliceblue;
@@ -20,30 +17,32 @@
             float:left;
             border-radius: 10px;
             box-shadow: 1px 1px 20px black;
+
+        button{
+            width: 200px;
+            height: 100px;
+        }
+        }
+        body {
+            margin: 10px;
+            padding: 10px;
+
         }
     </style>
 </head>
-<body >
-<div style="display: flex">
-    <?php
-    $recette = ModeleRecette::uneRecette();
-    $arr[' '] = '';
-    // Ajouter la requête à la variable $A_vue
-    $A_vue['recette'] = $recette;
-    // Supprimer les doublons
-    $A_vue['recette'] = array_unique($A_vue['recette']);
-    for ($i = 0;$i < 3;$i++){
-        echo "<div class='rectangle'>";
-        echo "<table>";
-        // Afficher les résultats
-        foreach ($A_vue['recette'] as $key => $value) {
-            echo "<tr><td>" . $key . "</td><td>" . $value . "</td></tr>";
-        }
-        echo "</table>";
-        echo "</div>";
-        // Supprimer la recette pour le prochain tour de boucle
-    }
-    ?>
+<div  class='box-recette'">
+<?php
+
+for ($i = 0; $i < 3; $i++) {
+?>
+<div class='body'>
+    <h2 class="title"><?php echo $A_vue['recette'][$i]['photographie'] ?></h2>
+    <p class="text">Difficulté :<?php echo$A_vue['recette'][$i]['difficulte']?></p>
+    <p class="text">temps de preparation :  <?php echo$A_vue['recette'][$i]['temps_preparation'] ?> min</p>
+    <p class="text">note_moyenne :  <?php echo$A_vue['recette'][$i]['note_moyenne'] ?>/20</p>
+    <a href="Connexion/Login.php"><button><?= $A_vue['recette'][$i]['id'] ?> Recette</button></a>
 </div>
-</body>
-</html>
+
+<?php
+}
+?>
