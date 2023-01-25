@@ -1,6 +1,6 @@
 <nav>
     <ul class="navbar">
-        <li><a href="/Controleurs/ControleurAccueil.php@defautAction">Accueil</a></li>
+        <li><a href="/Vues/Accueil/Accueil">Accueil</a></li>
         <li><a href="/Vues/Contact/Contact">A propos de nous</a></li>
         <li><a href="/Vues/Contact/Contact">Contact</a></li>
         <li class="search-bar">

@@ -2,7 +2,12 @@
 
 class ControleurAccueil extends Controller
 {
-    public function defautAction(){
-        Vue::montrer('../Accueil/Accueil');
+    public function defautAction()
+    {
+        $this->render('standard/entete');
+        echo $A_vue['body'];
+        $this->render('standard/pied');
+
     }
 }
+

@@ -7,19 +7,15 @@ session_start();
 
 <link rel="stylesheet" href="connexion.css">
 
-<form action="/Login/connecter/" method="POST">
+<form action="/connexion/connecterAction/" method="POST">
 
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email"/>
+    <label for="identifiant">Identifiant</label>
+    <input type="text" name="identifiant" id="identifiant"/>
 
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password"/>
-
-    <input type="submit" value="Login"/>
+    <label for="mot_de_passe">Mot de passe</label>
+    <input type="password" name="mot_de_passe" id="mot_de_passe"/>
+    <?php if(isset($_SESSION['error_message'])) { echo $_SESSION['error_message']; } ?>
+    <input type="submit" value="Connexion"/>
 
 </form>
 <?php include '../standard/pied.php'; ?>
-
-
-
-

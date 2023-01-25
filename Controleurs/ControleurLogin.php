@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-final class ControleurLogin
-{
+final class ControleurLogin {
     public function defautAction(){
         $_SESSION['error_message'] = "";
         Vue::montrer('Connexion/Register');
@@ -14,9 +13,7 @@ final class ControleurLogin
     }
 
     public function deconnexionAction(){
-        $_SESSION['error_message'] = "";
-        $_SESSION["pseudo"] = NULL;
-        $_SESSION["token"] = NULL;
+        session_destroy();
         header("Location: /");
     }
 
@@ -27,32 +24,52 @@ final class ControleurLogin
 
     public function inscrireAction()
     {
-        $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
-        $model = new Login($req_prep);
-        $model->submitAction($_GET['nom_affichage'], $_GET['identifiant'], $_GET['mot_de_passe']);
-        if($_SESSION['error_message'] != ""){
+        $db = new Database();
+        $model = new Login($db);
+        $nom_affichage = $_POST['nom_affichage'];
+        $identifiant = $_POST['identifiant'];
+        $mot_de_passe = $_POST['mot_de_passe'];
+
+        if($nom_affichage == NULL || $identifiant == NULL || $mot_de_passe == NULL){
+            $_SESSION['error_message'] = "Veuillez remplir tous les champs";
             Vue::montrer('Connexion/Register');
-        }else{
+            return;
+        }
+
+        $result = $model->submitAction($nom_affichage, $identifiant, $mot_de_passe);
+
+        if($result == "exists") {
+            $_SESSION['error_message'] = "L'adresse mail existe déja";
+            Vue::montrer('Connexion/Register');
+            return;
+        } elseif ($result == "success") {
             header("Location: /");
+        } else {
+            Vue::montrer('Connexion/Register');
         }
     }
 
     public function connecterAction(){
-        if($_GET['identifiant'] == NULL || $_GET['mot_de_passe'] == NULL){
+        $db = new Database();
+        $model = new Login($db);
+        $identifiant = $_POST['identifiant'];
+        $mot_de_passe = $_POST['mot_de_passe'];
+
+        if($identifiant == NULL || $mot_de_passe == NULL){
             $_SESSION['error_message'] = "Veuillez remplir tous les champs";
             Vue::montrer('Connexion/Login');
             return;
         }
 
-        $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
-        $model = new Login($req_prep);
-        $model->getCompteAction($_GET['identifiant'], $_GET['mot_de_passe']);
-        if($_SESSION['token'] == true){
+        $result = $model->connecterAction($identifiant, $mot_de_passe);
+
+        if($result == "success") {
             header("Location: /");
         } else {
+            $_SESSION['error_message'] = "Identifiant ou mot de passe incorrect";
             Vue::montrer('Connexion/Login');
         }
     }
-
 }
+
 ?>
