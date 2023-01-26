@@ -40,8 +40,13 @@ button[type="submit"]:hover {
 
 /* Radio Input Style */
 .form-check-input {
-    margin-right: 10px;
+    width: 20px;
+
 }
+
+
+
+
 
 body
 {
