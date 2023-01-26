@@ -15,10 +15,9 @@ class ControleurAdmin
         $Description = $_POST['description_textuelle_preparation'];
         $Cuisson = $_POST['type_cuisson'];
         $Particularite = $_POST['liste_particularite'];
-        $Appreciation = $_POST['liste_appreciation'];
 
         $ajouter = new Admin();
-        $ajouter->ajouterRecette($Id, $Nom, $Note, $Image, $Ingredients, $Ustensiles, $TempsPreparation, $Difficulte, $Cout, $Description, $Cuisson, $Particularite, $Appreciation);
+        $ajouter->ajouterRecette($Id, $Nom, $Note, $Image, $Ingredients, $Ustensiles, $TempsPreparation, $Difficulte, $Cout, $Description, $Cuisson, $Particularite);
         echo '<div>Recette ajoutée.</div>';
 
 
