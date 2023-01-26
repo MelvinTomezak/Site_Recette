@@ -1,12 +1,16 @@
-<!doctype html>
 
+
+<!doctype html>
+<!-- Affiche 3 recettes au hasard -->
 <html lang="fr">
 <head>
     <link rel="stylesheet" href="accueil.css">
+    <title> Accueil</title>
 </head>
 <body>
 <div  class="center-button">
-    <div><a href="/Recette/catalogueRecette/"><button>Catalogue de recette</button></a>
+    <div>
+        <a href="/Recette/catalogueRecette/"><button>Catalogue de recette</button></a>
     </div>
 <div class='box-recette'>
     <?php
@@ -26,7 +30,8 @@
     }
     ?>
 </div>
-
+</div>
+</body>
 </html>
 <style>
      .recette-info  {

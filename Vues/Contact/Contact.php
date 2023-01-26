@@ -1,6 +1,8 @@
 <?php session_start(); ?>
-
-<html>
+    <!doctype html>
+<!-- Ce code est un formulaire de contact HTML qui permet aux utilisateurs de saisir leur adresse e-mail,
+leur objet et leur message, qui sont ensuite envoyés en soumettant le formulaire. -->
+    <html>
 <head>
     <?php include '../standard/entete.php'; ?>
     <link rel="stylesheet" href="contact.css" />

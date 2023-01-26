@@ -1,6 +1,7 @@
 <?php include '../standard/entete.php'?>
 
     <!doctype html>
+<!-- Cette page permet d'ajouter une patisserie en spécifiant ses différentes spécificités -->
     <html lang="fr">
 <head>
     <title> Ajouter une recette</title>

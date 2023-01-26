@@ -1,9 +1,14 @@
+<!-- W3C Verif -->
+
 <?php session_start(); ?>
 <?php include '../standard/entete.php'; ?>
     <!doctype html>
     <html lang="fr">
-
+<head>
     <link rel="stylesheet" href="about.css">
+    <title> A propos de nous</title>
+</head>
+   <body>
 
     <h1>À propos de nous</h1>
 
@@ -31,6 +36,7 @@
     <h2>Contactez-nous</h2>
 
     <p>Nous sommes ouverts à toutes sortes de critiques. Si vous avez des questions ou des commentaires à propos de notre site ou de nos recettes, n'hésitez pas à nous contacter à l'adresse suivante : <a href="mailto:maisondespatisseries@gmail.com">maisondespatisseries@gmail.com</a>.</p>
-
+</body>
+</html>
 
     <?php include '../standard/pied.php'; ?>
