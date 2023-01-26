@@ -34,7 +34,6 @@
      .recette-info  {
         width: 80%;
         height: 300px;
-        background: brown;
         display: flex;
         justify-content: center;
         align-items: center;
