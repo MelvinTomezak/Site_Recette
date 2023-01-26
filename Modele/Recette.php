@@ -1,5 +1,5 @@
 
-//Ce code définit une classe Recette qui contient des méthodes statiques pour récupérer des informations en base de données et pour commenter une recette. Les méthodes readAll() et avoir3recettes() permettent de récupérer des informations sur les recettes, laRecette() permet de récupérer une recette unique et toutesLesRecettes() permet de récupérer toutes les recettes. La méthode commenter() permet de commenter une recette et la méthode rechercherRecette() permet de rechercher une recette par son nom.
+<!-- Ce code définit une classe Recette qui contient des méthodes statiques pour récupérer des informations en base de données et pour commenter une recette. Les méthodes readAll() et avoir3recettes() permettent de récupérer des informations sur les recettes, laRecette() permet de récupérer une recette unique et toutesLesRecettes() permet de récupérer toutes les recettes. La méthode commenter() permet de commenter une recette et la méthode rechercherRecette() permet de rechercher une recette par son nom. -->
 
 <?php
 

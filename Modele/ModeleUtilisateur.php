@@ -1,6 +1,6 @@
 
-//Ce code définit la classe ModeleUtilisateur qui permet de gérer les utilisateurs en base de données. On commence par inclure la classe Database qui permet de se connecter à la base de données.
-//Ensuite, il y a 4 fonctions qui permettent respectivement de lire tous les utilisateurs, de créer un utilisateur, de modifier un utilisateur et de supprimer un utilisateur.
+<!-- Ce code définit la classe ModeleUtilisateur qui permet de gérer les utilisateurs en base de données. On commence par inclure la classe Database qui permet de se connecter à la base de données.
+Ensuite, il y a 4 fonctions qui permettent respectivement de lire tous les utilisateurs, de créer un utilisateur, de modifier un utilisateur et de supprimer un utilisateur.-->
 
 <?php
 require_once("../Noyau/Database/Database.php");
