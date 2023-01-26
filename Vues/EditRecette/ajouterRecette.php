@@ -74,7 +74,7 @@ session_start();
         <input type="text" id="type_cuisson" name="type_cuisson" class="form-control">
     </div>
     <div class="form-group">
-        <label for="liste_particularite" id="liste_particularite">Cout :</label>
+        <label for="liste_particularite" id="liste_particularite">Particularite :</label>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="liste_particularite" value="vegetarien">
             <label class="form-check-label" for="vegetarien">vegetarien</label>
@@ -91,10 +91,6 @@ session_start();
             <input class="form-check-input" type="radio" name="liste_particularite" value="sans lactose">
             <label class="form-check-label" for="sans lactose">sans lactose</label>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="liste_appreciation">Appréciation :</label>
-        <textarea id="liste_appreciation" name="liste_appreciation" class="form-control"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Ajouter</button>
 </form>
