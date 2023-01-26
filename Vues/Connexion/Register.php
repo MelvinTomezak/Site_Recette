@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<?php include '../standard/entete.php'?>
+
 
 <!doctype html>
 <html lang="fr">
@@ -10,17 +10,17 @@ session_start();
 
 <form action="/Login/inscrire" method="POST">
 
-    <label for="username">Username</label>
+    <label for="nom_affichage">Username</label>
     <input type="text" name="nom_affichage" id="nom_affichage"/>
 
-    <label for="email">Email</label>
+    <label for="identifiant">Email</label>
     <input type="email" name="identifiant" id="identifiant"/>
 
-    <label for="password">Password</label>
+    <label for="mot_de_passe">Password</label>
     <input type="password" name="mot_de_passe" id="mot_de_passe"/>
 
     <input type="submit" value="Register"/>
 
 </form>
-<?php include '../standard/pied.php'?>
+
 
