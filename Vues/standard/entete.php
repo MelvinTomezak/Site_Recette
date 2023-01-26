@@ -1,6 +1,6 @@
 <nav>
     <ul class="navbar">
-        <li><a href="/Controleurs/ControleurAccueil.php@defautAction">Accueil</a></li>
+        <li><a href="/">Accueil</a></li>
         <li><a href="/Vues/About/aPropos">A propos de nous</a></li>
         <li><a href="/Vues/Contact/Contact">Contact</a></li>
         <li class="search-bar">
@@ -27,7 +27,6 @@
             align-items: center;
             padding: 10px;
         }
-
         nav ul {
             list-style-type: none;
             margin: 0;
@@ -36,42 +35,35 @@
             align-items: center;
             justify-content: center;
         }
-
         nav ul li {
             margin: 0 10px;
         }
-
         nav ul li a {
             color: black;
             text-decoration: none;
             font-family: sans-serif;
             font-weight: bold;
         }
-
         nav ul li a:hover {
             background-color: #2f6cc9;
             color: white;
             padding: 1px;
             border-radius: 5px;
         }
-
         nav ul li.search-bar {
             margin-left: 50px;
         }
-
         nav form {
             display: flex;
             align-items: center;
             padding-top: 10px;
         }
-
         nav input[type="search"] {
             padding: 10px;
             border: none;
             border-radius: 10px;
             margin-right: 10px;
         }
-
         nav button[type="submit"] {
             background-color: #2f6cc9;
             color: white;
@@ -81,7 +73,5 @@
             font-weight: bold;
             cursor: pointer;
         }
-
-
     </style>
 </head>
