@@ -1,4 +1,4 @@
-
+<?php include '../standard/entete.php'?>
 <form action="/Admin/ajouter" method="POST">
     <div class="form-group">
         <label for="id">ID :</label>
@@ -10,7 +10,7 @@
     </div>
     <div class="form-group">
         <label for="note_moyenne">Note :</label>
-        <input type="number" min="1" max="5" id="note_moyenne" name="note_moyenne" class="form-control">
+        <input type="number" min="1" max="20" id="note_moyenne" name="note_moyenne" class="form-control">
     </div>
     <div class="form-group">
         <label for="photographie">Lien image :</label>
@@ -29,12 +29,38 @@
         <input type="number" id="temps_preparation" name="temps_preparation" class="form-control">
     </div>
     <div class="form-group">
-        <label for="difficulte">Difficulté :</label>
-        <input type="text" id="difficulte" name="difficulte" class="form-control">
+        <label for="difficulte" id="difficulte">Difficulté :</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="difficulte" value="très facile">
+            <label class="form-check-label" for="tres_facile">Très facile</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="difficulte" value="facile">
+            <label class="form-check-label" for="facile">Facile</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="difficulte" value="moyen">
+            <label class="form-check-label" for="moyen">Moyen</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="difficulte" value="difficile">
+            <label class="form-check-label" for="difficile">Difficile</label>
+        </div>
     </div>
     <div class="form-group">
-        <label for="cout">Coût :</label>
-        <input type="text" id="cout" name="cout" class="form-control">
+        <label for="cout" id="cout">Cout :</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="cout" value="bon marche">
+            <label class="form-check-label" for="bon marche">bon marche</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="cout" value="cout moyen">
+            <label class="form-check-label" for="cout moyen">cout moyen</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="cout" value="assez cher">
+            <label class="form-check-label" for="assez cher">assez cher</label>
+        </div>
     </div>
     <div class="form-group">
         <label for="description_textuelle_preparation">Description :</label>
@@ -45,8 +71,23 @@
         <input type="text" id="type_cuisson" name="type_cuisson" class="form-control">
     </div>
     <div class="form-group">
-        <label for="liste_particularite">Particularité :</label>
-        <textarea id="liste_particularite" name="liste_particularite" class="form-control"></textarea>
+        <label for="liste_particularite" id="liste_particularite">Cout :</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="liste_particularite" value="vegetarien">
+            <label class="form-check-label" for="vegetarien">vegetarien</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="liste_particularite" value="vegan">
+            <label class="form-check-label" for="vegan">vegan</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="liste_particularite" value="sans gluten">
+            <label class="form-check-label" for="sans gluten">sans gluten</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="liste_particularite" value="sans lactose">
+            <label class="form-check-label" for="sans lactose">sans lactose</label>
+        </div>
     </div>
     <div class="form-group">
         <label for="liste_appreciation">Appréciation :</label>
@@ -54,3 +95,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Ajouter</button>
 </form>
+<?php include '../standard/pied.php'?>
