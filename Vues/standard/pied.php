@@ -1,1 +1,1 @@
-<footer>&copy; 2023 Site Recette. Tous droits réservés.</footer>
+<footer>&copy; 2023 maisondespatisseries Tous droits réservés.</footer>
