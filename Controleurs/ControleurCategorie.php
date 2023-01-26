@@ -1,5 +1,8 @@
 <?php
-
+//La classe ControleurCategorie contient la méthode rechercherAction qui effectue une recherche dans la base de données des recettes selon un terme de recherche qui est stocké dans la variable $recherche.
+//Un objet $admin de type Categorie est instancié.
+//La méthode rechercherRecette est ensuite appelée avec des paramètres pour faire une recherche des recettes.
+//Si le résultat de la recherche est différent de vide, une liste est alors affichée avec les informations de la recette.
 class ControleurCategorie
 {
     public function rechercherAction()

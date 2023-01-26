@@ -1,5 +1,8 @@
 <?php
-
+//La class controleurLogin est un contrôleur qui gère les actions liées à la connexion et à
+// l'inscription d'un utilisateur. Elle définit des méthodes "connecterAction",
+// "inscrireAction" et "deconnexionAction" qui récupèrent les variables POST, vérifient les identifiants et
+// déconnectent l'utilisateur.
 final class ControleurLogin
 {
     public function connecterAction()

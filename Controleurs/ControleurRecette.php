@@ -1,5 +1,11 @@
 <?php
 
+// La class ControleurRecette permet de définir une classe qui contient des méthodes
+// permettant d'afficher et de gérer des recettes. Les méthodes voirAction, recetteAction,
+// supprimerRecetteAction, catalogueRecetteAction, readAll, laRecetteAction et rechercherAction
+// permettent respectivement de voir une recette, de voir une recette en détail, de supprimer une recette,
+// d'afficher un catalogue de recettes, de récupérer la liste des recettes, d'afficher les détails d'une recette
+// et de rechercher une recette.
 final class ControleurRecette{
     public function voirAction($params){
 

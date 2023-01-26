@@ -1,5 +1,8 @@
 <?php
-
+// La classe ControleurDefaut définit le contrôleur par défaut pour le système.
+// Elle définit les méthodes nécessaires pour gérer les actions de l'utilisateur, telles que lire, ajouter, mettre à jour et supprimer des recettes.
+// Elle définit également la méthode par défautAction() qui est appelée pour afficher les trois recettes par défaut et la méthode laRecetteAction() qui est appelée pour afficher une recette spécifique.
+// Enfin, elle définit la méthode something() qui vérifie si la session est administrateur. Si ce n'est pas le cas, une erreur est déclenchée.
 class ControleurDefaut{
     public function voirAction($params){
 

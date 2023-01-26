@@ -1,5 +1,6 @@
 <?php
-
+//La class ControleurAppreciation est un contrôleur qui permet d'effectuer des actions sur les appreciations.
+//Elle contient des méthodes pour créer, modifier, supprimer et lire des appreciations.
 
 class ControleurAppreciation
 {
@@ -10,7 +11,7 @@ class ControleurAppreciation
         $tab_t = ModeleAppreciation::readAll();
 
     }
-
+    //la fonction add permet d'ajouter une appréciation
     public static function add()
     {
         $pageTitle = "...";
@@ -23,7 +24,7 @@ class ControleurAppreciation
             controllerErreur::erreur("Problème dans la création de la recette");
         }
     }
-
+    //la fonction update permet de mettre a jour une appréciation
     public static function update()
     {
         $pageTitle = "...";
@@ -36,7 +37,7 @@ class ControleurAppreciation
             controllerErreur::erreur("Problème dans la modification de la recette");
         }
     }
-
+    //la fonction delete permete de supprimer une appreciation
     public static function delete()
     {
         $pageTitle = "...";

@@ -1,5 +1,7 @@
 <?php
-
+// La class ControleurUtilisateur représente un contrôleur Utilisateur qui permet d'effectuer des actions sur un utilisateur.
+// Elle permet de récupérer la liste des utilisateurs, d'ajouter, de modifier et supprimer un utilisateur et une
+// action réservée pour un administrateur. Les méthodes utilisées proviennent du modèle Utilisateur.
 
 class ControleurUtilisateur
 {
