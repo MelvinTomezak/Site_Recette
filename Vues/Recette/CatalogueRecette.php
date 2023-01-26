@@ -2,7 +2,9 @@
 <html lang="fr">
 
 <link rel="stylesheet" href="Accueil.css">
-<a href="/Vues/Recette/Categorie.php"> Toutes nos catégories</a>
+<div class="redirection">
+    <p> Vous aurez la possibilité d'observer nos différentes catégories </p><a href="/Vues/Recette/Categorie.php">ici</a>
+</div>
 <?php
 $recettes = Recette::toutesLesRecettes();
 
@@ -15,10 +17,12 @@ foreach($recettes as $recette) {
             <p class="text">Difficulté :<?php echo $recette['difficulte']?></p>
             <p class="text">temps de preparation :  <?php echo $recette['temps_preparation'] ?> min</p>
             <p class="text">note_moyenne :  <?php echo $recette['note_moyenne'] ?>/20</p>
-            <a href="/Recette/recette/<?php echo $recette['id'] ?>"><button><?php echo "{$recette['nom_recette']} Recette" ?></button></a>            <form action="/Admin/supprimer" method="post">
+            <a href="/Recette/recette/<?php echo $recette['id'] ?>"><button><?php echo "{$recette['nom_recette']} Recette" ?></button></a>
                 <form action="/Admin/supprimer" method="post">
-                    <input type="hidden" name="id" value="<?php echo $recette['id'] ?>">
-                    <input type="submit" value="Supprimer">
+                    <div class="supp">
+                        <input type="hidden" name="id" value="<?php echo $recette['id'] ?>">
+                        <input type="submit" value="Supprimer">
+                    </div>
                 </form>
     </div>
     <?php
@@ -82,10 +86,59 @@ foreach($recettes as $recette) {
     .recette
     {
         border: solid;
-        background: #e66465;
+        background:#9198e5;
         justify-content: center;
         align-items: center;
     }
+
+    .redirection {
+        text-align: center;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+
+    .redirection p {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .redirection a {
+        color: blue;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .redirection a:hover {
+        color: red;
+    }
+
+    .box-recette {
+        text-align: center;
+    }
+
+    .supp {
+        text-align: center;
+    }
+
+    .supp input[type="submit"] {
+        padding: 10px 20px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        margin:10px;
+    }
+
+    .supp input[type="submit"]:hover {
+        background-color: darkred;
+    }
+
+
 
 </style>
 

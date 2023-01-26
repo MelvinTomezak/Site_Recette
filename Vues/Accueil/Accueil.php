@@ -47,6 +47,7 @@
         background-repeat: no-repeat;
         background-size: cover;
          border: solid;
+         background:#9198e5;
     }
 
     button{
@@ -62,7 +63,7 @@
     body {
         margin: 10px;
         padding: 10px;
-        background: #9198e5;
+        background: #F5F5DC;
     }
 
     .title {
@@ -102,6 +103,24 @@
     {
         text-align: center;
     }
+
+     .center-button {
+         text-align: center;
+     }
+
+     .center-button button {
+         padding: 10px 20px;
+         background-color: #D2691E;
+         color: white;
+         border: none;
+         border-radius: 5px;
+         font-size: 18px;
+         cursor: pointer;
+         width: fit-content;
+         border : solid black;
+     }
+
+
 
 
 </style>

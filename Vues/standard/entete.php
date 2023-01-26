@@ -26,7 +26,6 @@
         </li>
     </ul>
 </nav>
-<head>
     <!--  sdfdfgd -->
     <style>
         nav {
@@ -85,4 +84,3 @@
             cursor: pointer;
         }
     </style>
-</head>
