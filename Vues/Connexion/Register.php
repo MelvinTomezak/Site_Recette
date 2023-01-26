@@ -3,26 +3,24 @@ session_start();
 ?>
 
 
-<?php include '../standard/entete.php'; ?>
-
 <!doctype html>
 <html lang="fr">
 
 <link rel="stylesheet" href="connexion.css">
 
-<form action="/Compte/inscrire/" method="POST">
+<form action="/Login/inscrire" method="POST">
 
     <label for="username">Username</label>
-    <input type="text" name="username" id="username"/>
+    <input type="text" name="nom_affichage" id="nom_affichage"/>
 
     <label for="email">Email</label>
-    <input type="email" name="email" id="email"/>
+    <input type="email" name="identifiant" id="identifiant"/>
 
     <label for="password">Password</label>
-    <input type="password" name="password" id="password"/>
+    <input type="password" name="mot_de_passe" id="mot_de_passe"/>
 
     <input type="submit" value="Register"/>
 
 </form>
 
-<?php include '../standard/pied.php'; ?>
+

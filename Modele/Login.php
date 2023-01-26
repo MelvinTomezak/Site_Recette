@@ -34,11 +34,10 @@ class Login {
             $query->execute();
             $_SESSION['token'] = $token;
             $_SESSION['nom_affichage'] = $nom_affichage;
-            return "success";
         }
     }
 
-    public function connecterAction($identifiant, $mot_de_passe){
+    public function getCompteAction($identifiant, $mot_de_passe){
 
         $stmt = $this->req_prep->prepare("SELECT * FROM Login WHERE identifiant = ?");
         $stmt->execute(array($identifiant));
@@ -47,9 +46,6 @@ class Login {
             $_SESSION['token'] = $result[0]['token'];
             $_SESSION['nom_affichage'] = $result[0]['nom_affichage'];
             $_SESSION['error_message'] = "";
-            $stmt2 = $this->req_prep->prepare("UPDATE Login SET date_derniere_connexion = ?  WHERE identifiant=?");
-            $stmt2->execute(array(date("Y-m-d H:i:s"),$identifiant));
-            return "success";
         } else {
             $_SESSION['error_message'] = "Identifiant ou mot de passe incorrect";
             return "fail";

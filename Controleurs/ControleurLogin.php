@@ -13,7 +13,9 @@ final class ControleurLogin {
     }
 
     public function deconnexionAction(){
-        session_destroy();
+        $_SESSION['error_message'] = "";
+        $_SESSION["nom_affichage"] = NULL;
+        $_SESSION["token"] = NULL;
         header("Location: /");
     }
 
@@ -24,25 +26,25 @@ final class ControleurLogin {
 
     public function inscrireAction()
     {
-        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");;
         $model = new Login($db);
-        $model->submitAction($_GET['username'], $_GET['email'], $_GET['password'], 0);
+        $model->submitAction($_GET['nom_affichage'], $_GET['identifiant'], $_GET['mot_de_passe']);
         if($_SESSION['error_message'] != ""){
-            Vue::montrer('Connexion/Login');
+            Vue::montrer('Connexion/Register');
         }else{
             header("Location: /");
         }
     }
 
     public function connecterAction(){
-        if($_GET['email'] == NULL || $_GET['password'] == NULL){
+        if($_GET['identifiant'] == NULL || $_GET['mot_de_passe'] == NULL){
             $_SESSION['error_message'] = "Veuillez remplir tous les champs";
-            Vue::montrer('Connexion/Register');
+            Vue::montrer('Connexion/Login');
             return;
         }
         $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
         $model = new Login($db);
-        $model->connecterAction($_GET['email'], $_GET['password']);
+        $model->getCompteAction($_GET['identifiant'], $_GET['mot_de_passe']);
         if($_SESSION['token'] == true){
             header("Location: /");
         } else {
