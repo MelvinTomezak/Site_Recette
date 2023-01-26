@@ -1,4 +1,6 @@
+
 <!doctype html>
+
 <html lang="fr">
 <head>
     <link rel="stylesheet" href="accueil.css">
@@ -23,8 +25,7 @@
         <?php
     }
     ?>
-
-<p>Test</p>
+</div>
 </html>
 <style>
     . .recette-info  {
@@ -101,4 +102,3 @@
 </style>
 </head>
 <body>
-<?php

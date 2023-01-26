@@ -47,5 +47,9 @@ class Login {
         }
     }
 
+    public function deconnexion(){
+        session_destroy();
+    }
+
 }
 

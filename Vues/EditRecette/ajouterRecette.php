@@ -1,4 +1,7 @@
-<?php include '../standard/entete.php'?>
+<?php include '../standard/entete.php'; ?>
+<?php
+session_start();
+?>
 <form action="/Admin/ajouter" method="POST">
     <div class="form-group">
         <label for="id">ID :</label>

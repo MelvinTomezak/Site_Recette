@@ -10,9 +10,18 @@
             </form>
         </li>
         <li class="right">
-            <a href="/Vues/Connexion/Login">Login</a>
-            <a href="/Vues/Connexion/Register">Register</a>
-            <a href="/Vues/EditRecette/ajouterRecette">AjouterRecette</a>
+
+            <?php
+            if (isset($_SESSION['identifiant'])) {
+                echo "<li><a href= /Login/deconnexion> Logout </a></li>";
+                echo '<a href="/Vues/EditRecette/ajouterRecette">AjouterRecette</a>';
+            }
+            else{
+                echo '<a href="/Vues/Connexion/Login">Login</a>';
+                echo '<a href="/Vues/Connexion/Register">Register</a>';
+            }
+            ?>
+
         </li>
     </ul>
 </nav>

@@ -19,6 +19,7 @@ final class ControleurLogin
             // Connecté
             $_SESSION['identifiant'] = $identifiant;
             echo '<div>Vous êtes connecté.</div>';
+            header("Location: /");
         }
     }
 
@@ -33,8 +34,16 @@ final class ControleurLogin
         $_SESSION['identifiant'] = $identifiant;
         echo '<div>Vous êtes inscrit.</div>';
     }
-}
-?>
+
+
+
+    public function deconnexionAction(){
+        $deconnexion = new Login();
+        $deconnexion->deconnexion();
+        echo '<div>Vous êtes déconnecté.</div>';
+        header("Location: /");
+    }
+
 
 }
 ?>

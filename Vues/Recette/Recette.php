@@ -1,13 +1,13 @@
 <div class="row">
     <div class="col-md-4">
-        <?php if (isset($A_vue['recette'][1])) { ?>
-            <img class="rounded-lg" src="<?= $A_vue['recette'][1]['photographie'] ?>" alt="<?= $A_vue['recette'][0]['nom'] ?>">
+        <?php if (isset($A_vue['recette'][0])) { ?>
+            <img class="rounded-lg" src="<?= $A_vue['recette'][0] ?>" alt="<?= $A_vue['recette'][0]['nom'] ?>">
         <?php } ?>
     </div>
     <div class="col-md-8">
         <?php if (isset($A_vue['recette'][1])) { ?>
             <h3 class="text-3xl mb-5"><?= $A_vue['recette'][1]['nom'] ?></h3>
-            <p><?= $A_vue['recette'][0]['description_textuelle_preparation'] ?></p>
+            <p><?= $A_vue['recette'][1]['description_textuelle_preparation'] ?></p>
         <?php } ?>
     </div>
 </div>

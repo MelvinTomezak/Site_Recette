@@ -10,26 +10,8 @@ class Recette{
         return $rep->fetchAll();
     }
 
-    public function create(){
-        $sql = "INSERT INTO recette(id) VALUES (:idT)";
-        $req_prep = Database::$con->prepare($sql);
-        $values = array("id" => NULL);
-        $req_prep->execute($values);
-    }
 
-    public function update(){
-        $sql = 'UPDATE recette SET id = :idT';
-        $req_prep = Database::$con->prepare($sql);
-        $values = array("id" => $this->id);
-        $req_prep->execute($values);
-    }
 
-    public function delete(){
-        $sql = "DELETE FROM recette WHERE id = :idT";
-        $req_prep = Database::$con->prepare($sql);
-        $values = array("id" => $this->id);
-        $req_prep->execute($values);
-    }
     public static function avoir3recettes(){
 
         $sql = 'SELECT id, photographie, difficulte, temps_preparation ,note_moyenne FROM recette ORDER BY RANDOM() LIMIT 3';
@@ -64,16 +46,6 @@ LIMIT 3';
         $recettes = $req_prep->fetchAll(PDO::FETCH_ASSOC);
         return $recettes;
     }
-    public function delete1(){
-        $database = new Database();
-        $con = $database->getConnection();
-        $sql = "DELETE FROM recette WHERE id = :idT";
-        $req_prep = $con->prepare($sql);
-        $values = array("id" => $this->id);
-        $req_prep->execute($values);
-        return $req_prep;
-    }
-
 
 
 }
