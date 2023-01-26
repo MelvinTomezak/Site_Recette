@@ -1,65 +1,115 @@
-
 <!doctype html>
 <html lang="fr">
-
-<link rel="stylesheet" href="Accueil.css">
 <head>
-    <style>
-        .body {
-            width: 300px;
-            height: 300px;
-            background: aliceblue;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #000;
-            float:left;
-            border-radius: 10px;
-            box-shadow: 1px 1px 20px black;
-
-        button{
-            width: 200px;
-            height: 100px;
-        }
-        }
-        body {
-            margin: 10px;
-            padding: 10px;
-
-        }
-
-        .title {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .text {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    </style>
+    <link rel="stylesheet" href="accueil.css">
 </head>
+<body>
+<div class='box-recette'>
+    <?php
+    for ($i = 0; $i < 3; $i++) {
+        ?>
+        <div class="gateaux">
+            <h2 class="title"><?php echo $A_vue['recette'][$i]['photographie'] ?></h2>
+            <br>
+            <p class="text">Difficulté :<?php echo $A_vue['recette'][$i]['difficulte'] ?></p>
+            <br>
+            <p class="text">temps de preparation : <?php echo $A_vue['recette'][$i]['temps_preparation'] ?> min</p>
+            <br>
+            <p class="text">note_moyenne : <?php echo $A_vue['recette'][$i]['note_moyenne'] ?>/20</p>
+            <br>
+            <a href="/Recette/recette/<?php echo $A_vue['recette'][$i]['id'] ?>">
+                <button><?= $A_vue['recette'][$i]['id'] ?> Recette</button>
+            </a>
+        </div>
+        <?php
+    }
+    ?>
+</div>
+
+
+<a1 href="/Recette/recette/">
+    <button>Catalogue de recette</button>
+</a1>
+<p>Test</p>
+</html>
+
+<style>
+    .gateaux {
+        width: 80%;
+        height: 300px;
+        background: brown;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #000;
+        float:left;
+        border-radius: 10px;
+        box-shadow: 1px 1px 20px black;
+        display: flex;
+        flex-wrap: wrap;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    button{
+        width: 50%;
+        height: 100px;
+        background-color: #ffa600;
+        border-radius: 10px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: white;
+    }
+
+    body {
+        margin: 10px;
+        padding: 10px;
+        background: #9198e5;
+    }
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #ffa600;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.2em;
+        color: #ffa600;
+    }
+
+    h2.title::before {
+        content: "🎂";
+        font-size: 2em;
+        margin-right: 10px;
+    }
+
+    p.text::before {
+        content: "🕰️";
+        font-size: 1.5em;
+        margin-right: 10px;
+    }
+
+    a button::before {
+        content: "🍰";
+        font-size: 1.5em;
+        margin-right: 10px;
+    }
+
+    a button:hover{
+        background-color: #ffd600;
+    }
+
+</style>
+</head>
+<body>
 <div  class='box-recette'">
 <?php
-
-for ($i = 0; $i < 3; $i++) {
-    ?>
-    <div class="body" >
-        <h2 class="title"><?php echo $A_vue['recette'][$i]['photographie'] ?></h2>
-        <p class="text">Difficulté :<?php echo$A_vue['recette'][$i]['difficulte']?></p>
-        <p class="text">temps de preparation :  <?php echo$A_vue['recette'][$i]['temps_preparation'] ?> min</p>
-        <p class="text">note_moyenne :  <?php echo$A_vue['recette'][$i]['note_moyenne'] ?>/20</p>
-        <a href="/Recette/recette/<?php echo $A_vue['recette'][$i]['id'] ?>"><button><?= $A_vue['recette'][$i]['id'] ?> Recette</button></a></div>
-
-    <?php
-}
-?>
-</div>
-<div  class='box-recette'">
-
-<a1 href="/Recette/recette/"><button>Catalogue de recette</button></a1></div>
-</html>
