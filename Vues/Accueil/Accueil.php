@@ -13,13 +13,14 @@
     for ($i = 0; $i < 3; $i++) {
         ?>
         <div class="recette-info">
+            <h1 class="title"><?php echo $A_vue['recette'][$i]['nom_recette'] ?></h1>
             <h2 class="title"><?php echo $A_vue['recette'][$i]['photographie'] ?></h2>
             <div class="test">
                 <p class="text"> Difficulté :<?php echo $A_vue['recette'][$i]['difficulte']?></p>
                 <p class="text"> Temps de preparation : <?php echo $A_vue['recette'][$i]['temps_preparation'] ?> min</p>
                 <p class="text">Note_moyenne : <?php echo $A_vue['recette'][$i]['note_moyenne'] ?>/20</p>
                 <div class="center-button">
-                    <a href="/Recette/recette/<?php echo $A_vue['recette'][$i]['id'] ?>"><button><?= $A_vue['recette'][$i]['id'] ?> Recette</button></a></div>
+                    <a href="/Recette/recette/<?= $A_vue['recette'][$i]['id'] ?>"><button><?= $A_vue['recette'][$i]['id'] ?> Recette</button></a></div>
             </div>
         </div>
         <?php
