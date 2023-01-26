@@ -1,56 +1,35 @@
 <?php
-session_start();
 
-final class ControleurLogin {
-    public function defautAction(){
-        $_SESSION['error_message'] = "";
-        Vue::montrer('Connexion/Register');
-    }
-
-    public function connexionAction(){
-        $_SESSION['error_message'] = "";
-        Vue::montrer('Connexion/Login');
-    }
-
-    public function deconnexionAction(){
-        $_SESSION['error_message'] = "";
-        $_SESSION["nom_affichage"] = NULL;
-        $_SESSION["token"] = NULL;
-        header("Location: /");
-    }
-
-    public function inscriptionAction(){
-        $_SESSION['error_message'] = "";
-        Vue::montrer('Connexion/Register');
-    }
-
-    public function inscrireAction()
+final class ControleurLogin
+{
+    public function connecterAction()
     {
-        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");;
-        $model = new Login($db);
-        $model->submitAction($_GET['nom_affichage'], $_GET['identifiant'], $_GET['mot_de_passe']);
-        if($_SESSION['error_message'] != ""){
-            Vue::montrer('Connexion/Register');
-        }else{
-            header("Location: /");
-        }
-    }
+        // Récupération des variables
+        $identifiant = $_POST['identifiant'];
+        $mot_de_passe = $_POST['mot_de_passe'];
 
-    public function connecterAction(){
-        if($_GET['identifiant'] == NULL || $_GET['mot_de_passe'] == NULL){
-            $_SESSION['error_message'] = "Veuillez remplir tous les champs";
-            Vue::montrer('Connexion/Login');
+        // Connexion à la base de données
+        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+        if ($db === false) {
+            echo '<div>Impossible de se connecter à la base de données.</div>';
             return;
         }
-        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
-        $model = new Login($db);
-        $model->getCompteAction($_GET['identifiant'], $_GET['mot_de_passe']);
-        if($_SESSION['token'] == true){
-            header("Location: /");
+        // Vérification des identifiants
+        $req = 'SELECT * FROM utilisateur WHERE identifiant = \'' . $identifiant . '\' AND mot_de_passe = \'' . $mot_de_passe . '\'';
+        $req_prep = $db->prepare($req);
+        $req_prep->execute();
+        $result = $req_prep->fetchAll(PDO::FETCH_ASSOC);
+
+        if (count($result) == 0) {
+            // Mauvais identifiant ou mot de passe
+            echo '<div>Mauvais identifiant ou mot de passe.</div>';
         } else {
-            Vue::montrer('Connexion/Login');
+            // Connecté
+            $_SESSION['identifiant'] = $identifiant;
+            echo '<div>Vous êtes connecté.</div>';
         }
     }
-}
 
+
+}
 ?>

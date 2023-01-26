@@ -8,7 +8,7 @@ session_start();
 
 <link rel="stylesheet" href="connexion.css">
 
-<form action="/Login/connecterAction/" method="POST">
+<form action="/Login/connecter" method="POST">
 
     <label for="identifiant">Identifiant</label>
     <input type="text" name="identifiant" id="identifiant"/>
