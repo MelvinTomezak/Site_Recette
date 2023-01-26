@@ -23,4 +23,15 @@ class ControleurAdmin
 
 
     }
+
+    public function supprimerAction(){
+        $Id = $_POST['id'];
+        $supprimer = new Admin();
+        $supprimer->supprimerRecette($Id);
+        echo '<div>Recette supprimée.</div>';
+
+    }
+
+
+
 }
