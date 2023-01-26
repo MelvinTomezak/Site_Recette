@@ -10,11 +10,29 @@ class Recette{
         return $rep->fetchAll();
     }
 
+    public function create(){
+        $sql = "INSERT INTO recette(id) VALUES (:idT)";
+        $req_prep = Database::$con->prepare($sql);
+        $values = array("id" => NULL);
+        $req_prep->execute($values);
+    }
 
+    public function update(){
+        $sql = 'UPDATE recette SET id = :idT';
+        $req_prep = Database::$con->prepare($sql);
+        $values = array("id" => $this->id);
+        $req_prep->execute($values);
+    }
 
+    public function delete(){
+        $sql = "DELETE FROM recette WHERE id = :idT";
+        $req_prep = Database::$con->prepare($sql);
+        $values = array("id" => $this->id);
+        $req_prep->execute($values);
+    }
     public static function avoir3recettes(){
 
-        $sql = 'SELECT id, photographie, difficulte, temps_preparation ,note_moyenne FROM recette ORDER BY RANDOM() LIMIT 3';
+        $sql = 'SELECT id, nom_recette, photographie, difficulte, temps_preparation ,note_moyenne FROM recette ORDER BY RANDOM() LIMIT 3';
         $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N")->prepare($sql);
         $req_prep->execute();
         $recettes = $req_prep->fetchAll(PDO::FETCH_ASSOC);
@@ -30,7 +48,7 @@ LIMIT 3';
         return $recette;
     }
     public static function laRecette($id){
-        $sql = "SELECT * FROM recette WHERE $id = $1 ";
+        $sql = "SELECT * FROM recette WHERE id = ? ";
         $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N")->prepare($sql);
         $values = array($id);
         $req_prep->execute($values);
@@ -46,6 +64,22 @@ LIMIT 3';
         $recettes = $req_prep->fetchAll(PDO::FETCH_ASSOC);
         return $recettes;
     }
+
+    public static function commenter(){
+        $sql = 'INSERT into ';
+        $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N")->prepare($sql);
+
+    }
+    public function delete1(){
+        $database = new Database();
+        $con = $database->getConnection();
+        $sql = "DELETE FROM recette WHERE id = :idT";
+        $req_prep = $con->prepare($sql);
+        $values = array("id" => $this->id);
+        $req_prep->execute($values);
+        return $req_prep;
+    }
+
 
 
 }

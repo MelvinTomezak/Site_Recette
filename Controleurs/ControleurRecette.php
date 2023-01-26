@@ -18,7 +18,14 @@ final class ControleurRecette{
     public static function recetteAction($params){
     $modelRecette = new Recette();
     $recette = $modelRecette->laRecette($params[0]);
+
+    Vue::montrer('Recette/Recette',array('recette' => $recette));    }
+
+    public static function supprimerRecetteAction($params){
+        $modelRecette = new Recette();
+        $recette = $modelRecette->laRecette($params[0]);
         Vue::montrer('Recette/Recette',array('recette' => $recette));    }
+
 
 
     public  function catalogueRecetteAction(){

@@ -2,7 +2,8 @@
 
 class ControleurAdmin
 {
-    public function ajouterAction(){
+    public function ajouterAction()
+    {
         $Id = $_POST['id'];
         $Nom = $_POST['nom_recette'];
         $Note = $_POST['note_moyenne'];
@@ -23,7 +24,8 @@ class ControleurAdmin
 
     }
 
-    public function supprimerAction(){
+    public function supprimerAction()
+    {
         $Id = $_POST['id'];
         $supprimer = new Admin();
         $supprimer->supprimerRecette($Id);
@@ -31,6 +33,33 @@ class ControleurAdmin
 
     }
 
+    public function commenterAction()
+    {
+//fonction pour ajouter un commentaire
+        if (isset($_POST['submit'])) {
+            $id_auteur = $_POST['id_auteur'];
+            $nom_auteur = $_POST['nom_auteur'];
+            $note = $_POST['note'];
+            $date = date("Y-m-d");
+            $commentaire = $_POST['commentaire'];
+
+            //execution de la fonction addComment()
+            $query = addComment($id_auteur, $nom_auteur, $note, $date, $commentaire);
+            if ($query) {
+                //si la requete est executée avec succès
+                header("location:index.php?success");
+            } else {
+                //si la requete n'est pas executée
+                header("location:index.php?failed");
+            }
+        }
 
 
+//fonction pour recuperer tous les commentaires
+        $comments = getComments();
+    }
 }
+
+
+
+

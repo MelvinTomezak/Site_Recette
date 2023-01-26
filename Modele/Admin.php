@@ -44,8 +44,24 @@ VALUES (:id, :nom_recette, :note_moyenne, :photographie, :liste_ingredient, :lis
         session_destroy();
     }
 
-
-
+//fonction pour ajouter un commentaire
+function addComment($id_auteur, $nom_auteur, $note, $date, $commentaire){
+        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+    $sql = "INSERT INTO appreciation (id_auteur, nom_auteur, note, date, commentaire) VALUES (:id_auteur, :nom_auteur,:note, :date,:commentaire)";
+    $req_prep = $db->prepare($sql);
+    $req_prep->execute();
 }
 
-?>
+//fonction pour recuperer tous les commentaires
+function getComments(){
+        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+    $sql = "SELECT * FROM appreciation ORDER BY date DESC";
+    $req_prep = $db->prepare($sql);
+    $comments = array();
+    while($row = $req_prep->fetchAll(PDO::FETCH_ASSOC)){
+        $comments[] = $row;
+    }
+    return $comments;
+}
+}
+

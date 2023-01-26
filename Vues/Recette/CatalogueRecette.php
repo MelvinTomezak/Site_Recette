@@ -10,15 +10,16 @@ foreach($recettes as $recette) {
     ?>
     <div  class='box-recette'>
         <div class="body"  >
+            <h1 class="title"><?php echo $recette['nom_recette'] ?></h1>
             <h2 class="title"><?php echo $recette['photographie'] ?></h2>
             <p class="text">Difficulté :<?php echo $recette['difficulte']?></p>
             <p class="text">temps de preparation :  <?php echo $recette['temps_preparation'] ?> min</p>
             <p class="text">note_moyenne :  <?php echo $recette['note_moyenne'] ?>/20</p>
-            <a href="/Recette/recette/<?php echo $recette['id'] ?>"><button><?= $recette['id'] ?> Recette</button></a></div>
-            <form action="/Admin/supprimer" method="post">
-                <input type="hidden" name="id" value="<?php echo $recette['id'] ?>">
-                <input type="submit" value="Supprimer">
-            </form>
+            <a href="/Recette/recette/<?php echo $recette['id'] ?>"><button><?php echo "{$recette['id']} Recette" ?></button></a>            <form action="/Admin/supprimer" method="post">
+                <form action="/Admin/supprimer" method="post">
+                    <input type="hidden" name="id" value="<?php echo $recette['id'] ?>">
+                    <input type="submit" value="Supprimer">
+                </form>
     </div>
     <?php
 }
