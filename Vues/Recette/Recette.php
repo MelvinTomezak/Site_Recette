@@ -55,6 +55,8 @@
         <p><?= $A_vue['recette'][0]->cout ?></p>
     <?php }?>
 
+
+
     <h4 class="text-2xl mt-4">Type de cuisson</h4>
     <?php if (isset($A_vue['recette'][0]->type_cuisson)) { ?>
         <p><?= $A_vue['recette'][0]->type_cuisson ?></p>

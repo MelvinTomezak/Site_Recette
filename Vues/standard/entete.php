@@ -6,7 +6,7 @@
         <li class="search-bar">
             <form action="/Recette/rechercher" method="post">
                 <input type="search" id ="recherche" name="recherche" placeholder="Search...">
-                <button type="submit">Search</button>
+                <button class="searchbutton" type="submit">Search</button>
             </form>
 
         </li>
@@ -26,8 +26,14 @@
         </li>
     </ul>
 </nav>
-    <!--  sdfdfgd -->
+    <!--  css -->
     <style>
+
+        a{
+            padding-right: 20px;
+
+        }
+
         nav {
             background-color: #FDA50F;
             border-radius: 10px;
@@ -82,5 +88,10 @@
             padding: 10px 20px;
             font-weight: bold;
             cursor: pointer;
+        }
+
+        .searchbutton{
+            width: 50%;
+            height: 50%;
         }
     </style>
