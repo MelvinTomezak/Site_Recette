@@ -7,7 +7,8 @@
 </head>
 <body>
 <div  class="center-button">
-    <div><a href="/Recette/catalogueRecette/"><button>Catalogue de recette</button></a></div>
+    <div><a href="/Recette/catalogueRecette/"><button>Catalogue de recette</button></a>
+    </div>
 <div class='box-recette'>
     <?php
     for ($i = 0; $i < 3; $i++) {
@@ -27,9 +28,10 @@
     }
     ?>
 </div>
+
 </html>
 <style>
-    . .recette-info  {
+     .recette-info  {
         width: 80%;
         height: 300px;
         background: brown;
@@ -38,7 +40,6 @@
         align-items: center;
         margin: 10px;
         padding: 10px;
-        border: 1px solid #000;
         float:left;
         border-radius: 10px;
         box-shadow: 1px 1px 20px black;
@@ -46,6 +47,7 @@
         flex-wrap: wrap;
         background-repeat: no-repeat;
         background-size: cover;
+         border: solid;
     }
 
     button{
@@ -94,9 +96,12 @@
     button
     {
         cursor: pointer;
-        text-align: center;
         padding: 10px;
         font-size: 20px;
+    }
+    .center-button
+    {
+        text-align: center;
     }
 
 
