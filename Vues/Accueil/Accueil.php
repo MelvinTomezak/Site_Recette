@@ -14,7 +14,6 @@
         ?>
         <div class="recette-info">
             <h1 class="title"><?php echo $A_vue['recette'][$i]['nom_recette'] ?></h1>
-            <h2 class="title"><?php echo $A_vue['recette'][$i]['photographie'] ?></h2>
             <div class="test">
                 <p class="text"> Difficulté :<?php echo $A_vue['recette'][$i]['difficulte']?></p>
                 <p class="text"> Temps de preparation : <?php echo $A_vue['recette'][$i]['temps_preparation'] ?> min</p>
@@ -32,14 +31,15 @@
 <style>
      .recette-info  {
         width: 80%;
-        height: 55%;
+        height: 300px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 2%;
-        padding: 2%;
+        margin: 10px;
+        padding: 10px;
         float:left;
-        border-radius:1%;
+        border-radius: 10px;
+        box-shadow: 1px 1px 20px black;
         display: flex;
         flex-wrap: wrap;
         background-repeat: no-repeat;
@@ -50,16 +50,17 @@
 
     button{
         width: 50%;
-        height: 20%;
+        height: 100px;
         background-color: #ffa600;
-        border-radius: 1%;
+        border-radius: 10px;
+        font-size: 1.2em;
         font-weight: bold;
         color: white;
     }
 
     body {
-        margin: 1%;
-        padding: 1%;
+        margin: 10px;
+        padding: 10px;
         background: #F5F5DC;
     }
 
@@ -67,6 +68,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        font-size: 1.5em;
         font-weight: bold;
         color: #ffa600;
     }
@@ -81,7 +83,8 @@
 
     h2.title::before {
         content: "🎂";
-        margin-right: 1%;
+        font-size: 2em;
+        margin-right: 10px;
     }
 
     p.text::before {
@@ -91,8 +94,8 @@
     button
     {
         cursor: pointer;
-        padding: 1%;
-        font-size: 2%;
+        padding: 10px;
+        font-size: 20px;
     }
     .center-button
     {
@@ -104,16 +107,19 @@
      }
 
      .center-button button {
-         padding: 1% 2%;
+         padding: 10px 20px;
          background-color: #D2691E;
          color: white;
          border: none;
-         border-radius: 5%;
-         font-size: 95%;
+         border-radius: 5px;
+         font-size: 18px;
          cursor: pointer;
          width: fit-content;
          border : solid black;
      }
+
+
+
 
 </style>
 </head>

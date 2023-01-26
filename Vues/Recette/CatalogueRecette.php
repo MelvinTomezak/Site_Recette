@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="fr">
 
 <link rel="stylesheet" href="Accueil.css">
@@ -13,7 +13,6 @@ foreach($recettes as $recette) {
     <div  class='box-recette'>
         <div class="recette"  >
             <h1 class="title"><?php echo $recette['nom_recette'] ?></h1>
-            <h2 class="title"><?php echo $recette['photographie'] ?></h2>
             <p class="text">Difficulté :<?php echo $recette['difficulte']?></p>
             <p class="text">temps de preparation :  <?php echo $recette['temps_preparation'] ?> min</p>
             <p class="text">note_moyenne :  <?php echo $recette['note_moyenne'] ?>/20</p>
