@@ -2,16 +2,16 @@
 
 class Admin
 {
-    public function ajouterRecette($Id, $Nom, $Note, $Image, $Ingredients, $Ustensiles, $TempsPreparation, $Difficulte, $Cout, $Description, $Cuisson, $Particularite){
-        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+    public function ajouterRecette($Id, $Nom, $Note, $Image, $Ingredients, $Ustensiles, $TempsPreparation, $Difficulte, $Cout, $Description, $Cuisson, $Particularite)
+    {
+        $db = Database::connect("rogue.db.elephantsql.com", "ykutlvtz", "3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
         $req = 'SELECT * FROM recette WHERE id = :id';
         $req_prep = $db->prepare($req);
         $req_prep->bindParam(':id', $Id, PDO::PARAM_INT);
         $req_prep->execute();
         if ($req_prep->rowCount() > 0) {
             echo '<div> ID déjà utilisé. </div>';
-        }
-        else {
+        } else {
             $req = 'INSERT INTO recette (id, nom_recette, note_moyenne, photographie, liste_ingredient, liste_ustensile, temps_preparation, difficulte, cout, description_textuelle_preparation, type_cuisson, liste_particularite) 
 VALUES (:id, :nom_recette, :note_moyenne, :photographie, :liste_ingredient, :liste_ustensile, :temps_preparation, :difficulte, :cout, :description_textuelle_preparation, :type_cuisson, :liste_particularite)';
             $req_prep = $db->prepare($req);
@@ -32,44 +32,34 @@ VALUES (:id, :nom_recette, :note_moyenne, :photographie, :liste_ingredient, :lis
     }
 
 
-
-
-
-
-
-
-
-
-    public function supprimerRecette($Id){
-        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+    public function supprimerRecette($Id)
+    {
+        $db = Database::connect("rogue.db.elephantsql.com", "ykutlvtz", "3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
         $req = 'DELETE FROM recette WHERE id = :id';
         $req_prep = $db->prepare($req);
         $req_prep->bindParam(':id', $Id, PDO::PARAM_INT);
         $req_prep->execute();
     }
 
-    public function deconnexion(){
+    public function deconnexion()
+    {
         session_destroy();
     }
 
 //fonction pour ajouter un commentaire
-function addComment($id_auteur, $nom_auteur, $note, $date, $commentaire){
-        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
-    $sql = "INSERT INTO appreciation (id_auteur, nom_auteur, note, date, commentaire) VALUES (:id_auteur, :nom_auteur,:note, :date,:commentaire)";
-    $req_prep = $db->prepare($sql);
-    $req_prep->execute();
-}
+    public function ajouterCommentaire($Id, $nom, $note, $date, $commentaire)
+    {
+        $db = Database::connect("rogue.db.elephantsql.com", "ykutlvtz", "3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+        $req = 'INSERT INTO appreciation (id, nom_auteur, note, date, commentaire)
+VALUES (:id, :nom_auteur, :note, :date, :commentaire)';
+        $req_prep = $db->prepare($req);
+        $req_prep->bindParam(':id', $Id, PDO::PARAM_INT);
+        $req_prep->bindParam(':nom_auteur', $nom, PDO::PARAM_STR);
+        $req_prep->bindParam(':note', $note, PDO::PARAM_INT);
+        $req_prep->bindParam(':date', $date, PDO::PARAM_STR);
+        $req_prep->bindParam(':commentaire', $commentaire, PDO::PARAM_STR);
+        $req_prep->execute();
 
-//fonction pour recuperer tous les commentaires
-function getComments(){
-        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
-    $sql = "SELECT * FROM appreciation ORDER BY date DESC";
-    $req_prep = $db->prepare($sql);
-    $comments = array();
-    while($row = $req_prep->fetchAll(PDO::FETCH_ASSOC)){
-        $comments[] = $row;
     }
-    return $comments;
-}
 }
 

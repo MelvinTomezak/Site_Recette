@@ -70,8 +70,7 @@ final class ControleurRecette{
         if (isset($_POST['recherche'])) {
             $recherche = $_POST['recherche'];
             $admin = new Recette();
-            $resultat = $admin->rechercherRecette($recherche);
-
+            $admin->rechercherRecette($recherche);
             if (!empty($resultat)) {
                 echo '<ul>';
                 foreach ($resultat as $recette) {
@@ -92,6 +91,8 @@ final class ControleurRecette{
             } else {
                 echo 'Aucun résultat trouvé pour votre recherche';
             }
+
+
         }
 
     }

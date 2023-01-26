@@ -72,23 +72,14 @@
 
 <!-- formulaire pour ajouter un commentaire -->
 <h2>Ajouter un commentaire</h2>
-<form action="Admin\commenter" method="post">
-    <input type="text" name="id_auteur" placeholder="ID Auteur"><br><br>
+<form action="/Admin/commenter" method="post">
+    <input type="text" name="id" placeholder="ID Auteur"><br><br>
     <input type="text" name="nom_auteur" placeholder="Nom Auteur"><br><br>
     <input type="text" name="date" placeholder="Date"><br><br>
     <input type="text" name="note" placeholder="Note"><br><br>
     <textarea name="commentaire" placeholder="Commentaire" cols="30" rows="10"></textarea><br><br>
     <input type="submit" name="submit" value="Ajouter">
 </form>
-<?php $comments = (new Admin)->getComments(); ?>
-<!-- afficher les commentaires -->
-<h2>Commentaires</h2>
-<?php foreach($comments as $comment): ?>
-    <div>
-        <p><b><?php echo $comment['nom_auteur']; ?></b> <?php echo $comment['date']; ?></p>
-        <p><?php echo $comment['commentaire']; ?></p>
-    </div>
-<?php endforeach; ?>
 
 </body>
 </html>
