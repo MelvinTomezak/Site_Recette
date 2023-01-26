@@ -2,7 +2,7 @@
 
 class ControleurAdmin
 {
-    public function addAction(){
+    public function ajouterAction(){
         $Id = $_POST['id'];
         $Note = $_POST['note_moyenne'];
         $Image = $_POST['photographie'];
@@ -15,9 +15,11 @@ class ControleurAdmin
         $Cuisson = $_POST['type_cuisson'];
         $Particularite = $_POST['liste_particularite'];
         $Appreciation = $_POST['liste_apprecation'];
-        $ajouter = new Recette();
-        $ajouter->ajouterRecette();
-        echo '<div>Ajout effectué</div>';
+
+        $ajouter = new Admin();
+        $ajouter->ajouterRecette($Id, $Note, $Image,$Ingedients, $Ustensiles, $TempsPreparation, $Difficulte, $Cout, $Description, $Cuisson, $Particularite, $Appreciation);
+        echo '<div>Recette ajoutée.</div>';
+
 
     }
 }
