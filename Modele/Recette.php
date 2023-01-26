@@ -9,27 +9,6 @@ class Recette{
         $rep->setFetchMode(PDO::FETCH_CLASS, 'Recette');
         return $rep->fetchAll();
     }
-
-    public function create(){
-        $sql = "INSERT INTO recette(id) VALUES (:idT)";
-        $req_prep = Database::$con->prepare($sql);
-        $values = array("id" => NULL);
-        $req_prep->execute($values);
-    }
-
-    public function update(){
-        $sql = 'UPDATE recette SET id = :idT';
-        $req_prep = Database::$con->prepare($sql);
-        $values = array("id" => $this->id);
-        $req_prep->execute($values);
-    }
-
-    public function delete(){
-        $sql = "DELETE FROM recette WHERE id = :idT";
-        $req_prep = Database::$con->prepare($sql);
-        $values = array("id" => $this->id);
-        $req_prep->execute($values);
-    }
     public static function avoir3recettes(){
 
         $sql = 'SELECT id, nom_recette, photographie, difficulte, temps_preparation ,note_moyenne FROM recette ORDER BY RANDOM() LIMIT 3';
@@ -70,15 +49,20 @@ LIMIT 3';
         $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N")->prepare($sql);
 
     }
-    public function delete1(){
-        $database = new Database();
-        $con = $database->getConnection();
-        $sql = "DELETE FROM recette WHERE id = :idT";
-        $req_prep = $con->prepare($sql);
-        $values = array("id" => $this->id);
-        $req_prep->execute($values);
-        return $req_prep;
+
+
+    public function rechercherRecette($recherche){
+        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+        $req = 'SELECT * FROM recette WHERE nom_recette LIKE :recherche';
+        $req_prep = $db->prepare($req);
+        $req_prep->bindValue(':recherche', "%$recherche%", PDO::PARAM_STR);
+        $req_prep->execute();
+        $resultat = $req_prep->fetchAll();
+        return $resultat;
     }
+
+
+
 
 
 

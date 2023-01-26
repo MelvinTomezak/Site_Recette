@@ -32,6 +32,14 @@ VALUES (:id, :nom_recette, :note_moyenne, :photographie, :liste_ingredient, :lis
     }
 
 
+
+
+
+
+
+
+
+
     public function supprimerRecette($Id){
         $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
         $req = 'DELETE FROM recette WHERE id = :id';

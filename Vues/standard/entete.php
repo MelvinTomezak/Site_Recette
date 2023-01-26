@@ -4,10 +4,11 @@
         <li><a href="/Vues/About/aPropos">A propos de nous</a></li>
         <li><a href="/Vues/Contact/Contact">Contact</a></li>
         <li class="search-bar">
-            <form>
-                <input type="search" placeholder="Search...">
+            <form action="/Recette/rechercher" method="post">
+                <input type="search" id ="recherche" name="recherche" placeholder="Search...">
                 <button type="submit">Search</button>
             </form>
+
         </li>
         <li class="right">
 

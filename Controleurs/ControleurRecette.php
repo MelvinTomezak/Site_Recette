@@ -43,44 +43,10 @@ final class ControleurRecette{
 
     }
 
-    public static function add(){
-        $pageTitle = "...";
-        if(isset($_POST['recette'])){
-            $id = htmlspecialchars($_POST['recette']);
-            $ajoutRecette = new Recette($id);
-            $ajoutRecette->create();
 
-        }
-        else{
-            controllerErreur::erreur("Problème dans la création de la recette");
-        }
-    }
 
-    public static function update(){
-        $pageTitle = "...";
-        if(isset($_POST['type'])){
-            $id = htmlspecialchars($_POST['recette']);
-            $modifieRecette = new Recette($id);
-            $modifieRecette->update();
 
-        }
-        else{
-            controllerErreur::erreur("Problème dans la modification de la recette");
-        }
-    }
 
-    public static function delete(){
-        $pageTitle = "...";
-        if(isset($_POST['recette'])){
-            $id = htmlspecialchars($_POST['recette']);
-            $supprimeRecette = new Recette($id);
-            $supprimeRecette->delete();
-
-        }
-        else{
-            controllerErreur::erreur("Problème dans la suppression de la  recette");
-        }
-    }
 
 
 
@@ -98,17 +64,46 @@ final class ControleurRecette{
 
     }
 
+    public function rechercherAction()
+    {
 
+        if (isset($_POST['recherche'])) {
+            $recherche = $_POST['recherche'];
+            $admin = new Recette();
+            $resultat = $admin->rechercherRecette($recherche);
 
-
-
-    public static function something(){
-        if(session::is_admin()){
-            $pageTitle = "...";
+            if (!empty($resultat)) {
+                echo '<ul>';
+                foreach ($resultat as $recette) {
+                    echo '<li>' . $recette['nom_recette'] . '</li>';
+                    echo '<li>' . $recette['note_moyenne'] . '</li>';
+                    echo '<li>' . $recette['photographie'] . '</li>';
+                    echo '<li>' . $recette['liste_ingredient'] . '</li>';
+                    echo '<li>' . $recette['liste_ustensile'] . '</li>';
+                    echo '<li>' . $recette['temps_preparation'] . '</li>';
+                    echo '<li>' . $recette['difficulte'] . '</li>';
+                    echo '<li>' . $recette['cout'] . '</li>';
+                    echo '<li>' . $recette['description_textuelle_preparation'] . '</li>';
+                    echo '<li>' . $recette['type_cuisson'] . '</li>';
+                    echo '<li>' . $recette['liste_particularite'] . '</li>';
+                    // ou afficher d'autres infos de la recette
+                }
+                echo '</ul>';
+            } else {
+                echo 'Aucun résultat trouvé pour votre recherche';
+            }
         }
-        else{
-            controllerErreur::erreur("Action non autorisée pour un client");
-        }
+
     }
+
+
+
+
+
+
+
+
+
+
 
 }
