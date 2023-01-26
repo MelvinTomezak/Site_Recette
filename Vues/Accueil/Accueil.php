@@ -33,15 +33,14 @@
 <style>
      .recette-info  {
         width: 80%;
-        height: 300px;
+        height: 55%;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 10px;
-        padding: 10px;
+        margin: 2%;
+        padding: 2%;
         float:left;
-        border-radius: 10px;
-        box-shadow: 1px 1px 20px black;
+        border-radius: 1%;
         display: flex;
         flex-wrap: wrap;
         background-repeat: no-repeat;
@@ -52,17 +51,16 @@
 
     button{
         width: 50%;
-        height: 100px;
+        height: 20%;
         background-color: #ffa600;
-        border-radius: 10px;
-        font-size: 1.2em;
+        border-radius: 1%;
         font-weight: bold;
         color: white;
     }
 
     body {
-        margin: 10px;
-        padding: 10px;
+        margin: 1%;
+        padding: 1%;
         background: #F5F5DC;
     }
 
@@ -70,7 +68,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: 1.5em;
         font-weight: bold;
         color: #ffa600;
     }
@@ -85,8 +82,7 @@
 
     h2.title::before {
         content: "🎂";
-        font-size: 2em;
-        margin-right: 10px;
+        margin-right: 1%;
     }
 
     p.text::before {
@@ -96,8 +92,8 @@
     button
     {
         cursor: pointer;
-        padding: 10px;
-        font-size: 20px;
+        padding: 1%;
+        font-size: 2%;
     }
     .center-button
     {
@@ -109,19 +105,16 @@
      }
 
      .center-button button {
-         padding: 10px 20px;
+         padding: 1% 2%;
          background-color: #D2691E;
          color: white;
          border: none;
-         border-radius: 5px;
-         font-size: 18px;
+         border-radius: 5%;
+         font-size: 95%;
          cursor: pointer;
          width: fit-content;
          border : solid black;
      }
-
-
-
 
 </style>
 </head>

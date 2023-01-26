@@ -5,26 +5,23 @@
         <li><a href="/Vues/Contact/Contact">Contact</a></li>
         <li class="search-bar">
             <form action="/Recette/rechercher" method="post">
-                <input type="search" id ="recherche" name="recherche" placeholder="Search...">
-                <button type="submit">Search</button>
+                <input type="search" id ="recherche" name="recherche" placeholder="Rechercher une recette...">
+                <button type="submit"><i class="fa fa-search"></i></button>
             </form>
-
         </li>
         <li class="right">
-
-            <?php
-            if (isset($_SESSION['identifiant'])) {
-                echo "<li><a href= /Login/deconnexion> Logout </a></li>";
-                echo '<a href="/Vues/EditRecette/ajouterRecette">AjouterRecette</a>';
-            }
-            else{
-                echo '<a href="/Vues/Connexion/Login">Login</a>';
-                echo '<a href="/Vues/Connexion/Register">Register</a>';
-            }
-            ?>
-
-        </li>
-    </ul>
+<?php
+if (isset($_SESSION['identifiant'])) {
+    echo "<li><a href='/Login/deconnexion'> Se déconnecter </a></li>";
+    echo "<li><a href='/Vues/EditRecette/ajouterRecette'>Ajouter une recette</a> </li>";
+}
+else{
+    echo '<a href="/Vues/Connexion/Login">Se connecter</a>';
+    echo '<a href="/Vues/Connexion/Register">Inscription </a>';
+        }
+      ?>
+    </li>
+  </ul>
 </nav>
     <!--  sdfdfgd -->
     <style>
