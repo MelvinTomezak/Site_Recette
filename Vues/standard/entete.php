@@ -5,26 +5,37 @@
         <li><a href="/Vues/Contact/Contact">Contact</a></li>
         <li class="search-bar">
             <form action="/Recette/rechercher" method="post">
-                <input type="search" id ="recherche" name="recherche" placeholder="Rechercher une recette...">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="search" id ="recherche" name="recherche" placeholder="Search...">
+                <button class="searchbutton" type="submit">Search</button>
             </form>
+
+
+
         </li>
         <li class="right">
-<?php
-if (isset($_SESSION['identifiant'])) {
-    echo "<li><a href='/Login/deconnexion'> Se déconnecter </a></li>";
-    echo "<li><a href='/Vues/EditRecette/ajouterRecette'>Ajouter une recette</a></li>";
-}
-else{
-    echo '<a href="/Vues/Connexion/Login">Se connecter</a>';
-    echo '<a href="/Vues/Connexion/Register">Inscription </a>';
-        }
-      ?>
-    </li>
-  </ul>
+
+            <?php
+            if (isset($_SESSION['identifiant'])) {
+                echo "<li><a href='/Login/deconnexion'> Se déconnecter </a></li>";
+                echo "<li><a href='/Vues/EditRecette/ajouterRecette'>Ajouter une recette</a></li>";
+            }
+            else{
+                echo '<a href="/Vues/Connexion/Login">Login</a>';
+                echo '<a href="/Vues/Connexion/Register">Register</a>';
+            }
+            ?>
+
+        </li>
+    </ul>
 </nav>
-    <!--  sdfdfgd -->
+    <!--  css -->
     <style>
+
+        a{
+            padding-right: 20px;
+
+        }
+
         nav {
             background-color: #FDA50F;
             border-radius: 10px;
@@ -79,5 +90,10 @@ else{
             padding: 10px 20px;
             font-weight: bold;
             cursor: pointer;
+        }
+
+        .searchbutton{
+            width: 50%;
+            height: 50%;
         }
     </style>
