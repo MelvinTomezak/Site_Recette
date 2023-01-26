@@ -1,13 +1,21 @@
-# Un site de pâtisserie
+# Website | maisondespatisseries
+[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![PHPStorm](http://img.shields.io/badge/-PHPStorm-181717?style=for-the-badge&logo=phpstorm&logoColor=white)
 
-L'équipe présentée à la fin de ce README vous a concocté un site web de recette de pâtisserie
+
+## Lien du site web : https://.alwaysdata.net
+
+
+## Un site de pâtisserie
+
+L'équipe présentée à la fin de ce README vous a concocté un site web de recette de pâtisserie.
+Celui-ci vous permettra de retrouver des dizaines de pâtisseries de différentes cultures du monde.
 
 ## Effectué grace à la méthode MVC 
 
 La méthode MVC permet d'avoir un code mieux organiser et surtout, réorganisable.
-
-...
- 
 
 ## Membres
 
