@@ -66,11 +66,11 @@ final class ControleurRecette{
 
     public function rechercherAction()
     {
-
         if (isset($_POST['recherche'])) {
             $recherche = $_POST['recherche'];
+
             $admin = new Recette();
-            $admin->rechercherRecette($recherche);
+            $resultat=$admin->rechercherRecette($recherche);
             if (!empty($resultat)) {
                 echo '<ul>';
                 foreach ($resultat as $recette) {
