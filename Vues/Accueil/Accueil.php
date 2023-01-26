@@ -39,7 +39,7 @@
         margin: 2%;
         padding: 2%;
         float:left;
-        border-radius: 1%;
+        border-radius:1%;
         display: flex;
         flex-wrap: wrap;
         background-repeat: no-repeat;
