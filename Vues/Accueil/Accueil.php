@@ -4,9 +4,8 @@
     <link rel="stylesheet" href="accueil.css">
 </head>
 <body>
-<a href="/Vues/Recette/Recette.php">
-    <button>Catalogue de recette</button>
-</a>
+<div  class="center-button">
+    <div><a href="/Recette/catalogueRecette/"><button>Catalogue de recette</button></a></div>
 <div class='box-recette'>
     <?php
     for ($i = 0; $i < 3; $i++) {
@@ -18,17 +17,12 @@
                 <p class="text"> Temps de preparation : <?php echo $A_vue['recette'][$i]['temps_preparation'] ?> min</p>
                 <p class="text">Note_moyenne : <?php echo $A_vue['recette'][$i]['note_moyenne'] ?>/20</p>
                 <div class="center-button">
-                    <a href="/Recette/recette/<?php echo $A_vue['recette'][$i]['id'] ?>">
-                        <button><?= $A_vue['recette'][$i]['id'] ?> Recette</button>
-                    </a>
-                </div>
+                    <a href="/Recette/recette/<?php echo $A_vue['recette'][$i]['id'] ?>"><button><?= $A_vue['recette'][$i]['id'] ?> Recette</button></a></div>
             </div>
         </div>
         <?php
     }
     ?>
-
-</div>
 
 <p>Test</p>
 </html>
@@ -107,5 +101,4 @@
 </style>
 </head>
 <body>
-<div  class='box-recette'">
 <?php
