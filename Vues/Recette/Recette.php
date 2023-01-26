@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-md-4">
         <?php if (isset($A_vue['recette'][0])) { ?>
-            <img class="rounded-lg" src="<?= $A_vue['recette'][0]->photographie ?>" alt="<?= $A_vue['recette'][0]->nom ?>">
+            <img class="rounded-lg" src="<?= $A_vue['recette'][0]->photographie ?>"">
         <?php } ?>
     </div>
     <div class="col-md-8">

@@ -1,38 +1,32 @@
 <!doctype html>
 <html lang="fr">
-<head>
-    <link rel="stylesheet" href="Accueil.css">
-    <title> Catalogue de Recette</title>
-</head>
 
-<body>
+<link rel="stylesheet" href="Accueil.css">
 
 <?php
 $recettes = Recette::toutesLesRecettes();
 
 foreach($recettes as $recette) {
-?>
-<div  class='box-recette'>
-    <div class="body"  >
-        <h1 class="title"><?php echo $recette['nom_recette'] ?></h1>
-        <h2 class="title"><?php echo $recette['photographie'] ?></h2>
-        <p class="text">Difficulté :<?php echo $recette['difficulte']?></p>
-        <p class="text">temps de preparation :  <?php echo $recette['temps_preparation'] ?> min</p>
-        <p class="text">note_moyenne :  <?php echo $recette['note_moyenne'] ?>/20</p>
-        <a href="/Recette/recette/<?php echo $recette['id'] ?>"><button><?php echo "{$recette['id']} Recette" ?></button></a>            <form action="/Admin/supprimer" method="post">
-            <form action="/Admin/supprimer" method="post">
-                <input type="hidden" name="id" value="<?php echo $recette['id'] ?>">
-                <input type="submit" value="Supprimer">
-            </form>
+    ?>
+    <div  class='box-recette'>
+        <div class="body"  >
+            <h1 class="title"><?php echo $recette['nom_recette'] ?></h1>
+            <h2 class="title"><?php echo $recette['photographie'] ?></h2>
+            <p class="text">Difficulté :<?php echo $recette['difficulte']?></p>
+            <p class="text">temps de preparation :  <?php echo $recette['temps_preparation'] ?> min</p>
+            <p class="text">note_moyenne :  <?php echo $recette['note_moyenne'] ?>/20</p>
+            <a href="/Recette/recette/<?php echo $recette['id'] ?>"><button><?php echo "{$recette['id']} Recette" ?></button></a>            <form action="/Admin/supprimer" method="post">
+                <form action="/Admin/supprimer" method="post">
+                    <input type="hidden" name="id" value="<?php echo $recette['id'] ?>">
+                    <input type="submit" value="Supprimer">
+                </form>
     </div>
     <?php
-    }
-    ?>
-
-</body>
+}
+?>
 </html>
 <style>
-    .recette-info  {
+    . .recette-info  {
         width: 80%;
         height: 300px;
         background: brown;
@@ -59,8 +53,6 @@ foreach($recettes as $recette) {
         font-size: 1.2em;
         font-weight: bold;
         color: white;
-        display: block;
-        margin: 0 auto;
     }
 
     body {
@@ -104,12 +96,8 @@ foreach($recettes as $recette) {
         font-size: 20px;
     }
 
-    .body
-    {
-        border: solid;
-    }
 
-    .button:hover {
-        background-color: blue;
-    }
 </style>
+</head>
+<body>
+<?php
