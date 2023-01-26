@@ -1,7 +1,13 @@
-<?php include '../standard/entete.php'; ?>
-<?php
-session_start();
-?>
+<?php include '../standard/entete.php'?>
+
+    <!doctype html>
+    <html lang="fr">
+<head>
+    <title> Ajouter une recette</title>
+
+    <link rel="stylesheet" href="edit.css">
+</head>
+<body>
 <form action="/Admin/ajouter" method="POST">
     <div class="form-group">
         <label for="id">ID :</label>
@@ -92,6 +98,7 @@ session_start();
             <label class="form-check-label" for="sans lactose">sans lactose</label>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Ajouter</button>
+    <button type="submit" class="btn btn-primary">Ajouter une recette</button>
 </form>
+</body>
 <?php include '../standard/pied.php'?>

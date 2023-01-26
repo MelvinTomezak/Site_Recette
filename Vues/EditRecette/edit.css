@@ -1,0 +1,49 @@
+/* Form Style */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Label Style */
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Input Style */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+/* Button Style */
+button[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #F5F5DC;
+}
+
+/* Radio Input Style */
+.form-check-input {
+    margin-right: 10px;
+}
+
+body
+{
+    background-color: #F5F5DC;
+}
