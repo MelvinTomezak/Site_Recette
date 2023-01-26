@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-
+<?php include '../standard/entete.php'?>
 
 <!doctype html>
 <html lang="fr">
@@ -19,5 +19,5 @@ session_start();
     <input type="submit" value="Connexion"/>
 
 </form>
-
+<?php include '../standard/pied.php'?>
 
