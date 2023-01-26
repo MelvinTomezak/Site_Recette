@@ -12,6 +12,7 @@
         <li class="right">
             <a href="/Vues/Connexion/Login">Login</a>
             <a href="/Vues/Connexion/Register">Register</a>
+            <a href="/Vues/EditRecette/ajouterRecette">AjouterRecette</a>
         </li>
     </ul>
 </nav>
