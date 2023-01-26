@@ -31,7 +31,20 @@ VALUES (:id, :nom_recette, :note_moyenne, :photographie, :liste_ingredient, :lis
         }
     }
 
-
+    public function RechercherRecette($Recherche){
+        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+        $req = 'SELECT * FROM recette WHERE nom_recette = :Recherche';
+        $req_prep = $db->prepare($req);
+        $req_prep->bindParam(':Recherche', $Recherche,PDO::PARAM_STR);
+        $req_prep->execute();
+    }
+    public function RecupererImage($photographie){
+        $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
+        $req = 'SELECT photographie FROM recette WHERE id = :id';
+        $req_prep = $db->prepare($req);
+        $req_prep->bindParam(':id', $photographie);
+        $req_prep->execute();
+}
     public function supprimerRecette($Id)
     {
         $db = Database::connect("rogue.db.elephantsql.com", "ykutlvtz", "3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");

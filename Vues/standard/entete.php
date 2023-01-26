@@ -6,18 +6,16 @@
         <li class="search-bar">
             <form action="/Recette/rechercher" method="post">
                 <input type="search" id ="recherche" name="recherche" placeholder="Search...">
-                <button class="searchbutton" type="submit">Search</button>
+                <button type="submit">Search</button>
             </form>
-
-
 
         </li>
         <li class="right">
 
             <?php
             if (isset($_SESSION['identifiant'])) {
-                echo "<li><a href='/Login/deconnexion'> Se déconnecter </a></li>";
-                echo "<li><a href='/Vues/EditRecette/ajouterRecette'>Ajouter une recette</a></li>";
+                echo "<li><a href= /Login/deconnexion> Logout </a></li>";
+                echo '<a href="/Vues/EditRecette/ajouterRecette">AjouterRecette</a>';
             }
             else{
                 echo '<a href="/Vues/Connexion/Login">Login</a>';
@@ -28,14 +26,9 @@
         </li>
     </ul>
 </nav>
-    <!--  css -->
+<head>
+    <!--  sdfdfgd -->
     <style>
-
-        a{
-            padding-right: 20px;
-
-        }
-
         nav {
             background-color: #FDA50F;
             border-radius: 10px;
@@ -91,9 +84,5 @@
             font-weight: bold;
             cursor: pointer;
         }
-
-        .searchbutton{
-            width: 50%;
-            height: 50%;
-        }
     </style>
+</head>

@@ -7,29 +7,31 @@
     <title> Catégories des recettes</title>
 </head>
 <body>
+<form action="/Categorie/rechercher" method="post">
 <h1> Toute nos catégories</h1>
 <h2> Par rapport à la difficulté : </h2>
 <div style="display: flex;">
 
-    <button style="flex: 1;">Très facile</button>
-    <button style="flex: 1;">facile</button>
-    <button style="flex: 1;">Moyen</button>
-    <button style="flex: 1;">Difficile</button>
+    <button style="flex: 1;"id="tres facile" name="tres facile">Très facile </button>
+    <button style="flex: 1;" id="facile" name="facile">facile</button>
+    <button style="flex: 1;" id="moyen" name="moyen">Moyen</button>
+    <button style="flex: 1;" id="difficile" name="difficile">Difficile</button>
 </div>
 <h2> Par rapport au coût : </h2>
 <div style="display: flex;">
 
-    <button style="flex: 1;">Bon marché</button>
-    <button style="flex: 1;">Coût moyen</button>
-    <button style="flex: 1;">Assez cher</button>
+    <button style="flex: 1;" id="bon marche" name="bon marche">Bon marché</button>
+    <button style="flex: 1;" id="cout moyen" name="cout moyen">Coût moyen</button>
+    <button style="flex: 1;" id="assez cher" name="assez cher">Assez cher</button>
 </div>
 <h2> Rapport aux particularites</h2>
 <div style="display: flex;">
-    <button style="flex: 1;">Vegetarien</button>
-    <button style="flex: 1;">Vegan</button>
-    <button style="flex: 1;">Sans Lactose</button>
-    <button style="flex: 1;">Sans gluten</button>
+    <button style="flex: 1;" id="vegetarien" name="vegetarien">Vegetarien</button>
+    <button style="flex: 1;" id="vegan" name="vegan">Vegan</button>
+    <button style="flex: 1;" id="sans lactose" name="sans lactose">Sans Lactose</button>
+    <button style="flex: 1;" id="sans gluten" name="sans gluten">Sans gluten</button>
 </div>
+</form>
 </body>
 </html>
 <?php include '../standard/pied.php'?>
