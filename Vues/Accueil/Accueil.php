@@ -4,37 +4,36 @@
     <link rel="stylesheet" href="accueil.css">
 </head>
 <body>
+<a href="/Vues/Recette/Recette.php">
+    <button>Catalogue de recette</button>
+</a>
 <div class='box-recette'>
     <?php
     for ($i = 0; $i < 3; $i++) {
         ?>
-        <div class="gateaux">
+        <div class="recette-info">
             <h2 class="title"><?php echo $A_vue['recette'][$i]['photographie'] ?></h2>
-            <br>
-            <p class="text">Difficulté :<?php echo $A_vue['recette'][$i]['difficulte'] ?></p>
-            <br>
-            <p class="text">temps de preparation : <?php echo $A_vue['recette'][$i]['temps_preparation'] ?> min</p>
-            <br>
-            <p class="text">note_moyenne : <?php echo $A_vue['recette'][$i]['note_moyenne'] ?>/20</p>
-            <br>
-            <a href="/Recette/recette/<?php echo $A_vue['recette'][$i]['id'] ?>">
-                <button><?= $A_vue['recette'][$i]['id'] ?> Recette</button>
-            </a>
+            <div class="test">
+                <p class="text"> Difficulté :<?php echo $A_vue['recette'][$i]['difficulte']?></p>
+                <p class="text"> Temps de preparation : <?php echo $A_vue['recette'][$i]['temps_preparation'] ?> min</p>
+                <p class="text">Note_moyenne : <?php echo $A_vue['recette'][$i]['note_moyenne'] ?>/20</p>
+                <div class="center-button">
+                    <a href="/Recette/recette/<?php echo $A_vue['recette'][$i]['id'] ?>">
+                        <button><?= $A_vue['recette'][$i]['id'] ?> Recette</button>
+                    </a>
+                </div>
+            </div>
         </div>
         <?php
     }
     ?>
+
 </div>
 
-
-<a1 href="/Recette/recette/">
-    <button>Catalogue de recette</button>
-</a1>
 <p>Test</p>
 </html>
-
 <style>
-    .gateaux {
+    . .recette-info  {
         width: 80%;
         height: 300px;
         background: brown;
@@ -94,19 +93,14 @@
 
     p.text::before {
         content: "🕰️";
-        font-size: 1.5em;
-        margin-right: 10px;
     }
 
-    a button::before {
-        content: "🍰";
-        font-size: 1.5em;
-        margin-right: 10px;
+    button
+    {
+        cursor: pointer;
+        text-align: center;
     }
 
-    a button:hover{
-        background-color: #ffd600;
-    }
 
 </style>
 </head>
