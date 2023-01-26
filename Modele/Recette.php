@@ -1,4 +1,5 @@
 <?php
+
 class Recette{
 
 
@@ -56,12 +57,11 @@ LIMIT 3';
 
     }
     public static function toutesLesRecettes() {
-        $sql = 'SELECT photographie, difficulte, temps_preparation ,note_moyenne FROM recette ORDER BY id ASC LIMIT 3';
+        $sql = 'SELECT * FROM recette  LIMIT 100';
 
         $req_prep = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N")->prepare($sql);
         $req_prep->execute();
-        $recettes = $req_prep->fetch();
-
+        $recettes = $req_prep->fetchAll(PDO::FETCH_ASSOC);
         return $recettes;
     }
     public function delete1(){
@@ -92,5 +92,7 @@ LIMIT 3';
         $req_prep->execute();
 
     }
+
+
 
 }
