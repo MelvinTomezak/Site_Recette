@@ -1,6 +1,9 @@
 <html>
 
     <?php include '../standard/entete.php'; ?>
+    <head>
+        <link rel="stylesheet" href="ajoutRecette.css">
+    </head>
 <body>
 <form action="../../Controleurs/ControleurDefaut.php" method="POST">
     <div class="form-group">
@@ -35,19 +38,19 @@
     <div class="form-group">
         <label for="difficulte">Difficulté:</label>
         <select id="difficulteRecette" name="difficulte" class="form-control">
-            <option value="très facile">très facile</option>
-            <option value="facile">Facile</option>
-            <option value="moyen">Moyen</option>
-            <option value="difficile">Difficile</option>
+            <option value="Très facile">très facile</option>
+            <option value="Facile">Facile</option>
+            <option value="Moyen">Moyen</option>
+            <option value="Difficile">Difficile</option>
         </select>
     </div>
 
     <div class="form-group">
         <label for="cout">Coût:</label>
         <select id="coutRecette" name="cout" class="form-control">
-            <option value="bon Marcher">bon Marcher</option>
-            <option value="cout moyen">cout moyen</option>
-            <option value="assez cher">assez cher</option>
+            <option value="Bon marché">bon Marcher</option>
+            <option value="Cout moyen">cout moyen</option>
+            <option value="Assez cher">assez cher</option>
         </select>
     </div>
 
@@ -64,10 +67,10 @@
     <div class="form-group">
         <label for="particularite">Particularités:</label>
         <select id="particulariteRecette" name="particularite" class="form-control">
-            <option value="vegetarien">vegetarien</option>
-            <option value="vegan">vegan</option>
-            <option value="sans gluten">sans gluten</option>
-            <option value="sans lactose">sans lactose</option>
+            <option value="Vegetarien">vegetarien</option>
+            <option value="Vegan">vegan</option>
+            <option value="Sans gluten">sans gluten</option>
+            <option value="Sans lactose">sans lactose</option>
         </select>
     </div>
     <div class="form-group">

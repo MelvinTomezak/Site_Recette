@@ -20,7 +20,7 @@
     <!--  sdfdfgd -->
     <style>
         nav {
-            background: linear-gradient(#e66465, #9198e5);
+            background-color: #FDA50F;
             border-radius: 10px;
             border: 2px solid #2a5c8e;
             display: flex;

@@ -99,6 +99,8 @@
     {
         cursor: pointer;
         text-align: center;
+        padding: 10px;
+        font-size: 20px;
     }
 
 

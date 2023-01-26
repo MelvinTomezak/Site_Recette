@@ -5,6 +5,7 @@ session_start();
 
 <!doctype html>
 <html lang="fr">
+<title> Connexion</title>
 
 <link rel="stylesheet" href="connexion.css">
 
@@ -17,6 +18,14 @@ session_start();
     <input type="password" name="mot_de_passe" id="mot_de_passe"/>
 
     <input type="submit" value="Connexion"/>
+    <div class="connexion">
+        <div class="left-align">
+            <a href="mdpOublie.php"> Mot de passe oublié ?</a>
+        </div>
+        <div class="right-align">
+            <a href="Register.php"> Vous n'avez pas de compte ?</a>
+        </div>
+    </div>
 
 </form>
 <?php include '../standard/pied.php'?>

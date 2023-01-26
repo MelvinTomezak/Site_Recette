@@ -53,3 +53,14 @@ p {
     color: #8B2500; /* Couleur rappelant le chocolat */
     font-family: 'Great Vibes', cursive; /* Police d'écriture rappelant les écritures de pâtisserie */
 }
+
+.connexion {
+    display: flex;
+    justify-content: space-between;
+}
+.left-align{
+    align-self: flex-start;
+}
+.right-align{
+    align-self: flex-end;
+}
