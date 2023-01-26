@@ -32,13 +32,13 @@ foreach($recettes as $recette) {
 <style>
     .recette-info  {
         width: 80%;
-        height: 300px;
+        height: 30%;
         background: brown;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 10px;
-        padding: 10px;
+        margin: 1%;
+        padding: 1%;
         float:left;
         display: flex;
         flex-wrap: wrap;
@@ -48,10 +48,10 @@ foreach($recettes as $recette) {
 
     button{
         width: 50%;
-        height: 100px;
+        height: 10%;
         background-color: #ffa600;
-        border-radius: 10px;
-        font-size: 1.2em;
+        border-radius: 5%;
+        font-size: 95%;
         font-weight: bold;
         color: white;
     }
@@ -60,7 +60,7 @@ foreach($recettes as $recette) {
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: 1.5em;
+        font-size: 100%;
         font-weight: bold;
         color: #ffa600;
     }
@@ -69,13 +69,13 @@ foreach($recettes as $recette) {
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: 1.2em;
+        font-size: 100%;
         color: #ffa600;
     }
 
     h2.title::before {
         content: "🎂";
-        font-size: 2em;
+        font-size: 100%;
         margin-right: 10px;
     }
 
@@ -93,21 +93,21 @@ foreach($recettes as $recette) {
 
     .redirection {
         text-align: center;
-        margin: 20px;
-        padding: 20px;
-        border: 1px solid #ccc;
+        margin: 2%;
+        padding: 2%;
+        border:  solid #ccc;
     }
 
     .redirection p {
-        font-size: 18px;
+        font-size: 100%;
         font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 1%;
     }
 
     .redirection a {
         color: blue;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 100%;
         font-weight: bold;
     }
 
@@ -124,21 +124,19 @@ foreach($recettes as $recette) {
     }
 
     .supp input[type="submit"] {
-        padding: 10px 20px;
+        padding: 1% 2%;
         background-color: red;
         color: white;
         border: none;
-        border-radius: 5px;
-        font-size: 18px;
+        border-radius: 1%;
+        font-size: 100%;
         cursor: pointer;
-        margin:10px;
+        margin:1%;
     }
 
     .supp input[type="submit"]:hover {
         background-color: darkred;
     }
-
-
 
 </style>
 
