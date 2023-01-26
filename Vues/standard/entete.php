@@ -13,7 +13,7 @@
 <?php
 if (isset($_SESSION['identifiant'])) {
     echo "<li><a href='/Login/deconnexion'> Se déconnecter </a></li>";
-    echo "<li><a href='/Vues/EditRecette/ajouterRecette'>Ajouter une recette</a> </li>";
+    echo "<li><a href='/Vues/EditRecette/ajouterRecette'>Ajouter une recette</a></li>";
 }
 else{
     echo '<a href="/Vues/Connexion/Login">Se connecter</a>';
