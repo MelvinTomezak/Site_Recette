@@ -2,7 +2,8 @@
 
 class ControleurAdmin
 {
-    public function ajouterAction(){
+    public function ajouterAction()
+    {
         $Id = $_POST['id'];
         $Nom = $_POST['nom_recette'];
         $Note = $_POST['note_moyenne'];
@@ -23,7 +24,8 @@ class ControleurAdmin
 
     }
 
-    public function supprimerAction(){
+    public function supprimerAction()
+    {
         $Id = $_POST['id'];
         $supprimer = new Admin();
         $supprimer->supprimerRecette($Id);
@@ -31,6 +33,22 @@ class ControleurAdmin
 
     }
 
+public function commenterAction(){
+    $Id = $_POST['id'];
+    $nom = $_POST['nom_auteur'];
+    $note = $_POST['note'];
+    $date = $_POST['date'];
+    $commentaire = $_POST['commentaire'];
+
+    $ajouter = new Admin();
+    $ajouter->ajouterCommentaire($Id, $nom, $note, $date, $commentaire);
+    header('Location: /Recette/Recette');
+}
 
 
 }
+
+
+
+
+
