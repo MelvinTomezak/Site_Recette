@@ -2,14 +2,14 @@
 <html lang="fr">
 
 <link rel="stylesheet" href="Accueil.css">
-
+<a href="/Vues/Recette/Categorie.php"> Toutes nos catégories</a>
 <?php
 $recettes = Recette::toutesLesRecettes();
 
 foreach($recettes as $recette) {
     ?>
     <div  class='box-recette'>
-        <div class="body"  >
+        <div class="recette"  >
             <h1 class="title"><?php echo $recette['nom_recette'] ?></h1>
             <h2 class="title"><?php echo $recette['photographie'] ?></h2>
             <p class="text">Difficulté :<?php echo $recette['difficulte']?></p>
@@ -26,7 +26,7 @@ foreach($recettes as $recette) {
 ?>
 </html>
 <style>
-    . .recette-info  {
+    .recette-info  {
         width: 80%;
         height: 300px;
         background: brown;
@@ -35,10 +35,7 @@ foreach($recettes as $recette) {
         align-items: center;
         margin: 10px;
         padding: 10px;
-        border: 1px solid #000;
         float:left;
-        border-radius: 10px;
-        box-shadow: 1px 1px 20px black;
         display: flex;
         flex-wrap: wrap;
         background-repeat: no-repeat;
@@ -53,12 +50,6 @@ foreach($recettes as $recette) {
         font-size: 1.2em;
         font-weight: bold;
         color: white;
-    }
-
-    body {
-        margin: 10px;
-        padding: 10px;
-        background: #9198e5;
     }
 
     .title {
@@ -88,16 +79,14 @@ foreach($recettes as $recette) {
         content: "🕰️";
     }
 
-    button
+    .recette
     {
-        cursor: pointer;
-        text-align: center;
-        padding: 10px;
-        font-size: 20px;
+        border: solid;
+        background: #e66465;
+        justify-content: center;
+        align-items: center;
     }
 
-
 </style>
-</head>
-<body>
+
 <?php
