@@ -7,12 +7,15 @@ class Login {
         $db = Database::connect("rogue.db.elephantsql.com","ykutlvtz","3bqbVY-4n626jHaAdvIIraI3Ds5QcD4N");
 
         // Requête pour vérifier l'utilisateur
-        $req = pg_query($db, 'SELECT * FROM utilisateur WHERE identifiant = \'' . $identifiant . '\' AND mot_de_passe = \'' . $mot_de_passe . '\'');
+        $req = 'SELECT * FROM utilisateur WHERE identifiant = \'' . $identifiant . '\' AND mot_de_passe = \'' . $mot_de_passe . '\'';
+        $req_prep = $db->prepare($req);
+        $req_prep->execute();
+        $result = $req_prep->fetchAll(PDO::FETCH_ASSOC);
 
-        if (pg_num_rows($req) > 0) {
-            return true;
-        } else {
+        if (count($result) == 0) {
             return 'Mauvais identifiant ou mot de passe.';
+        } else {
+            return true;
         }
     }
 
