@@ -21,6 +21,14 @@ final class ControleurRecette{
         Vue::montrer('Recette/Recette',array('recette' => $recette));    }
 
 
+    public  function catalogueRecetteAction(){
+        $recetteModel = new Recette();
+        $recette = $recetteModel->toutesLesRecettes();
+
+        Vue::montrer('Recette/CatalogueRecette', array('recette' => $recette));
+
+    }
+
     /* Récupérer la liste des types */
     public static function readAll(){
         $pageTitle = "Toutes les recettes";
